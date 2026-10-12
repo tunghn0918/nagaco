@@ -1,0 +1,1494 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đề xuất Agentic Enterprise · Nagaco</title>
+<meta name="description" content="Đề xuất tóm tắt dự án Agentic Enterprise Transformation tại Công ty Cổ phần May Nam Định (Nagaco).">
+<link rel="icon" href="assets/logo/nagaco.png">
+<link rel="stylesheet" href="assets/fonts/bevietnampro.css">
+<style>
+/* Layout: thanh trên mảnh, hero toàn chiều rộng, bên dưới là mục lục trái cố định + cột nội dung 900px */
+:root{
+  --bg:#f5f7fb;--paper:#ffffff;--ink:#13203a;--muted:#5d6a82;--line:#e2e8f1;--soft:#eef3f9;--stage:#f2f6fc;
+  --b:#1e6fd9;--bd:#0b3d91;--bs:#e6effc;--ai:#6d3fd6;--ais:#f0eafd;--ok:#0f9b6c;--oks:#e2f5ed;--wn:#d47a0a;--wns:#fdf0de;--rd:#d0453a;--rds:#fcebe9;--cy:#0a8fb0;--cys:#e0f3f8;--in:#4651d6;--ins:#ecedfc;
+  --card:#ffffff;--cardline:#e3e9f2;--dot:#d7e0ec;--shadow:0 1px 2px rgba(13,30,70,.05),0 10px 30px rgba(13,30,70,.08);
+  --font:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1220;--paper:#111a2c;--ink:#e6ecf6;--muted:#9aa7bd;--line:#223049;--soft:#16223a;--stage:#0f1828;
+  --b:#5aa2f2;--bd:#8dbcf6;--bs:#16294a;--ai:#a88cfa;--ais:#241c42;--ok:#3ccf98;--oks:#0f2b21;--wn:#f0a23b;--wns:#2e2310;--rd:#f07a70;--rds:#33191a;--cy:#4cc3dd;--cys:#0f2a33;--in:#8d95f5;--ins:#1d2147;
+  --card:#152138;--cardline:#26354f;--dot:#22314b;--shadow:none;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1220;--paper:#111a2c;--ink:#e6ecf6;--muted:#9aa7bd;--line:#223049;--soft:#16223a;--stage:#0f1828;
+  --b:#5aa2f2;--bd:#8dbcf6;--bs:#16294a;--ai:#a88cfa;--ais:#241c42;--ok:#3ccf98;--oks:#0f2b21;--wn:#f0a23b;--wns:#2e2310;--rd:#f07a70;--rds:#33191a;--cy:#4cc3dd;--cys:#0f2a33;--in:#8d95f5;--ins:#1d2147;
+  --card:#152138;--cardline:#26354f;--dot:#22314b;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+b,strong{font-weight:600}
+p{margin:0 0 16px}
+a{color:var(--b)}
+:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+svg.ic{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;shape-rendering:geometricPrecision;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .in{max-width:1280px;margin:0 auto;height:58px;display:flex;align-items:center;gap:14px;padding-inline:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:17px}
+.brand img{height:24px}.brand img.lg{height:24px;width:auto}.brand img.ng{height:26px}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand img.lg{background:#fff;border-radius:6px;padding:3px 6px;box-sizing:content-box}}:root[data-theme="dark"] .brand img.lg{background:#fff;border-radius:6px;padding:3px 6px;box-sizing:content-box}.brand .sd9{height:30px;background:#fff;border-radius:6px;padding:2px}
+.brand .x{color:var(--muted);font-weight:400;font-size:13px}
+.top .ttl{margin-left:12px;padding-left:14px;border-left:1px solid var(--line);font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .ttl b{color:var(--ink)}
+.top .sp{flex:1}
+.ib{flex:none;height:34px;min-width:34px;padding:0 10px;border-radius:9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font:inherit;font-size:14px;display:inline-flex;align-items:center;gap:6px}
+#menuBtn{display:none}
+.prog{position:absolute;left:0;bottom:-1px;height:2px;background:var(--b);width:0}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 85% 20%,#2f86f0 0%,transparent 60%),linear-gradient(150deg,#061a46 0%,#0b3d91 52%,#1460c8 100%);color:#fff}
+.hero .in{max-width:1280px;margin:0 auto;padding:64px 20px 72px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero .ey{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#bcd6ff}
+.hero .ey i{width:28px;height:1px;background:#bcd6ff}
+.hero h1{margin:18px 0;font-size:clamp(36px,5vw,62px);line-height:1.05;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#9fd0ff,#c7b6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:19px;line-height:1.6;color:#d6e4ff;max-width:580px;margin:0}
+.hero .meta{display:flex;flex-wrap:wrap;gap:20px 40px;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);font-size:14px;color:#c4d6f5}
+.hero .meta b{display:block;color:#fff;font-size:15px}
+.hero .meta small{display:block;font-size:11px;letter-spacing:.14em;font-weight:700;color:#8fb3ea;text-transform:uppercase}
+.orbit{position:relative;aspect-ratio:1/1;max-width:460px;width:100%;margin:0 auto;container-type:inline-size}
+.orbit .ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.16)}
+.orbit .ring.r2{inset:15%;border-color:rgba(255,255,255,.22)}
+.orbit .ring.r3{inset:31%;border-style:dashed;border-color:rgba(255,255,255,.28)}
+.orbit .core{position:absolute;inset:36%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#dbe8ff);display:grid;place-items:center;text-align:center;box-shadow:0 0 0 10px rgba(255,255,255,.08),0 0 80px rgba(120,180,255,.6);color:#0b3d91}
+.orbit .core b{display:block;font-size:14px;letter-spacing:.06em;line-height:1.2}
+.orbit .core small{display:block;font-size:10.5px;color:#5d6a82;margin-top:3px}
+.orbit .spin{position:absolute;inset:0;animation:spin 60s linear infinite}
+.orbit .spin.s2{inset:15%;animation-duration:42s;animation-direction:reverse}
+.orbit .sat{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(var(--a)) translateY(calc(var(--r) * -1)) rotate(calc(var(--a) * -1))}
+.orbit .sat>span{position:absolute;left:0;top:0;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:7px 12px;border-radius:999px;font-size:12.5px;font-weight:600;background:rgba(255,255,255,.96);color:#0b3d91;box-shadow:0 8px 24px rgba(0,20,70,.3);animation:counter 60s linear infinite}
+.orbit .spin.s2 .sat>span{background:#efe9ff;color:#4a23a8;animation:counter2 42s linear infinite}
+.orbit .sat i{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.6}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes counter{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(-360deg)}}
+@keyframes counter2{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+/* shell */
+.shell{max-width:1280px;margin:0 auto;padding-inline:20px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px}
+nav.toc{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 92px);overflow:auto;padding:26px 0 30px;font-size:14px;scrollbar-width:thin}
+.toc .tt{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin:0 0 10px 10px}
+.toc a{display:flex;gap:8px;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:8px;line-height:1.35;border-left:2px solid transparent}
+.toc a:hover{background:var(--soft);color:var(--ink)}
+.toc a.on{color:var(--b);background:var(--bs);font-weight:600}
+.toc a .n{flex:none;min-width:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.toc .l1{color:var(--ink);font-weight:700;margin-top:8px}
+.toc .l2{padding-left:18px;font-weight:600;color:var(--ink)}
+.toc .l3{padding-left:30px;font-size:13.5px}
+.toc .l3.ck .n{color:var(--ok)}
+main{min-width:0;padding-bottom:40px}
+/* chapters */
+section.ch{padding-top:72px}
+.chead{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:end;margin-bottom:30px}
+.chead .n{font-size:80px;line-height:.8;font-weight:700;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px var(--b)}
+.chead small{display:block;font-size:12.5px;letter-spacing:.16em;font-weight:700;color:var(--b);text-transform:uppercase;margin-bottom:6px}
+.chead h2{margin:0;font-size:clamp(27px,3.4vw,38px);line-height:1.18;letter-spacing:-.02em}
+.hm{margin:64px 0 18px;padding:22px 24px;border-radius:18px;background:linear-gradient(120deg,var(--bs),var(--paper) 70%);border:1px solid color-mix(in srgb,var(--b) 25%,transparent);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.hm.ai{background:linear-gradient(120deg,var(--ais),var(--paper) 70%);border-color:color-mix(in srgb,var(--ai) 25%,transparent)}
+.hm .k{font-size:30px;font-weight:700;color:var(--b);letter-spacing:-.02em}
+.hm.ai .k{color:var(--ai)}
+.hm small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.hm h3{margin:2px 0 0;font-size:clamp(21px,2.4vw,26px);line-height:1.3;letter-spacing:-.01em}
+h4.sec{display:flex;gap:12px;align-items:baseline;margin:52px 0 12px;font-size:22px;line-height:1.35;letter-spacing:-.01em}
+h4.sec .k{flex:none;display:grid;place-items:center;min-width:34px;height:34px;padding:0 8px;border-radius:10px;background:var(--b);color:#fff;font-size:15px;transform:translateY(-2px)}
+.ai-c h4.sec .k{background:var(--ai)}
+h5.ss{display:flex;gap:10px;align-items:baseline;margin:34px 0 10px;font-size:18px;line-height:1.4}
+h5.ss .k{flex:none;font-size:14px;font-weight:700;color:var(--b);background:var(--bs);padding:2px 8px;border-radius:7px}
+.ai-c h5.ss .k{color:var(--ai);background:var(--ais)}
+.lead2{font-size:18.5px;line-height:1.65}
+.muted{color:var(--muted)}
+/* letter */
+.letter{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:50px 58px}
+.lhead{display:flex;gap:18px;align-items:center;padding-bottom:24px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.lhead img{width:68px;height:68px;border-radius:50%;object-fit:cover;flex:none}
+.lhead .s{font-size:18px;font-weight:600;line-height:1.45}
+.letter h4{margin:34px 0 10px;font-size:19.5px;color:var(--bd)}
+.letter p.first::first-letter{float:left;font-size:58px;line-height:.9;font-weight:700;color:var(--b);margin:6px 10px 0 0}
+.pull{margin:26px 0;padding:6px 0 6px 24px;border-left:3px solid var(--b);font-size:20px;line-height:1.5;font-weight:500}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 22px}
+.trio div{padding:16px;border-radius:14px;background:var(--soft);font-size:14.5px;line-height:1.55}
+.trio b{display:block;font-size:16px;margin-bottom:3px;color:var(--b)}
+.trio div:nth-child(3) b{color:var(--ai)}
+.mission{margin:26px 0;padding:26px 30px;border-radius:16px;background:linear-gradient(120deg,#0b3d91,#1e6fd9);color:#fff;font-size:19px;line-height:1.55;font-style:italic;text-align:center}
+.beliefs{display:grid;gap:10px;margin:22px 0}
+.beliefs p{margin:0;padding:12px 16px;border-radius:12px;background:var(--soft);font-size:16px}
+.sign{display:flex;align-items:center;gap:16px;margin-top:30px}
+.sign img{width:58px;height:58px;border-radius:50%;object-fit:cover}
+.sign b{display:block;font-size:18px}
+.sign span{font-size:14.5px;color:var(--muted)}
+/* figures */
+figure.mk{margin:24px 0 36px}
+.stage{position:relative;border-radius:22px;padding:22px 26px 28px;background:var(--stage);background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:18px 18px;border:1px solid var(--line);overflow:hidden}
+.fh{display:flex;align-items:center;gap:10px;margin:0 0 18px;font-size:14px}
+.fh .fn{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--b);background:var(--card);border:1px solid var(--cardline);padding:3px 9px;border-radius:999px}
+.ai-c .fh .fn{color:var(--ai)}
+.fh b{font-size:15px}
+.fh .bd{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--muted);background:var(--card);border:1px solid var(--cardline);padding:3px 9px;border-radius:999px;white-space:nowrap}
+.c{background:var(--card);border:1px solid var(--cardline);border-radius:14px;box-shadow:var(--shadow)}
+.lab{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--k,var(--b))}
+.lab .bx{width:26px;height:26px;border-radius:8px;background:var(--k,var(--b));color:#fff;display:grid;place-items:center}
+.lab .bx svg{width:16px;height:16px}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--card);border:1px solid var(--cardline);margin:2px 3px 2px 0;white-space:nowrap}
+.pill{display:inline-block;padding:3px 9px;border-radius:7px;font-size:11.5px;font-weight:700;white-space:nowrap}
+.p-ai{background:var(--ais);color:var(--ai)}.p-hx{background:var(--wns);color:var(--wn)}.p-hu{background:var(--rds);color:var(--rd)}.p-ok{background:var(--oks);color:var(--ok)}.p-b{background:var(--bs);color:var(--b)}
+.rv{transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.mk.pre .rv{opacity:0;transform:translateY(16px)}
+.mk.pre .rv.sc{transform:scale(.92)}
+/* text tables */
+.tbl{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper);font-size:14.5px;line-height:1.55;margin:14px 0 22px}
+.tbl th{background:var(--soft);text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:11px 14px;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td:first-child{font-weight:600;white-space:nowrap}
+.tbl td .s{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
+.tw{overflow-x:auto}
+.def{margin:18px 0 22px;padding:20px 24px;border-radius:16px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);position:relative}
+.def::before{content:"ĐỊNH NGHĨA";position:absolute;top:-10px;left:20px;font-size:10.5px;font-weight:700;letter-spacing:.14em;color:#fff;background:var(--ai);padding:2px 9px;border-radius:999px}
+.def p{margin:0;font-size:17px;line-height:1.6}
+.call{display:flex;gap:14px;margin:24px 0;padding:18px 20px;border-radius:16px;background:var(--oks);border:1px solid color-mix(in srgb,var(--ok) 30%,transparent);font-size:16px;line-height:1.6}
+.call .i{flex:none;width:30px;height:30px;border-radius:9px;background:var(--ok);color:#fff;display:grid;place-items:center;font-weight:700}
+.call.a{background:var(--ais);border-color:color-mix(in srgb,var(--ai) 30%,transparent)}.call.a .i{background:var(--ai)}
+.call.w{background:var(--wns);border-color:color-mix(in srgb,var(--wn) 30%,transparent)}.call.w .i{background:var(--wn)}
+.call p{margin:0}
+/* deliverables checklist */
+.deliv{margin:40px 0 10px;border-radius:22px;background:var(--paper);border:1.5px solid color-mix(in srgb,var(--ok) 40%,transparent);box-shadow:var(--shadow);overflow:hidden}
+.deliv .dh{display:flex;align-items:center;gap:14px;padding:18px 24px;background:linear-gradient(110deg,var(--oks),var(--paper) 80%);border-bottom:1px solid var(--line)}
+.deliv .dh .i{width:40px;height:40px;border-radius:12px;background:var(--ok);color:#fff;display:grid;place-items:center}
+.deliv .dh .i svg{width:22px;height:22px}
+.deliv .dh small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ok);text-transform:uppercase}
+.deliv .dh h4{margin:0;font-size:20px}
+.deliv ul{list-style:none;margin:0;padding:6px 10px 10px}
+.deliv li{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:start;padding:14px;border-bottom:1px dashed var(--line)}
+.deliv li:last-child{border-bottom:0}
+.deliv li .cb{width:24px;height:24px;border-radius:7px;border:2px solid var(--ok);display:grid;place-items:center;color:var(--ok);margin-top:2px}
+.deliv li .cb svg{width:14px;height:14px;stroke-width:3}
+.deliv li b{display:block;font-size:16px;line-height:1.4}
+.deliv li span{display:block;font-size:14px;color:var(--muted);line-height:1.5;margin-top:2px}
+.deliv li em{font-style:normal;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap;margin-top:3px}
+.ai-c .deliv{border-color:color-mix(in srgb,var(--ai) 40%,transparent)}
+.ai-c .deliv .dh{background:linear-gradient(110deg,var(--ais),var(--paper) 80%)}
+.ai-c .deliv .dh .i{background:var(--ai)}.ai-c .deliv .dh small{color:var(--ai)}
+.ai-c .deliv li .cb{border-color:var(--ai);color:var(--ai)}
+/* M venn */
+.venn{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.venn svg{width:100%;max-width:470px;display:block;margin:0 auto;overflow:visible}
+.venn svg text{font-family:var(--font)}
+.vb1{animation:breathe 6s ease-in-out infinite}.vb2{animation:breathe 6s ease-in-out infinite 2s}.vb3{animation:breathe 6s ease-in-out infinite 4s}
+@keyframes breathe{50%{fill-opacity:.24}}
+.vpulse{transform-origin:230px 210px;animation:vp 2.6s ease-out infinite}
+@keyframes vp{from{transform:scale(1);opacity:.55}to{transform:scale(1.9);opacity:0}}
+.vnotes{display:flex;flex-direction:column;gap:12px}
+.vnotes .c{padding:15px 17px;font-size:14.5px;line-height:1.55;display:grid;grid-template-columns:34px 1fr;gap:12px}
+.vnotes .c .d{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;background:var(--k)}
+.vnotes .c b{display:block;font-size:15.5px;margin-bottom:2px}
+/* M loop */
+.loopw{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.loopw svg{width:100%;max-width:400px;display:block;margin:0 auto;overflow:visible}
+.loopw svg text{font-family:var(--font)}
+.lsteps{display:flex;flex-direction:column;gap:12px}
+.lstep{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 16px;transition:border-color .4s,box-shadow .4s}
+.lstep .n{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:700;background:var(--soft);color:var(--muted);transition:all .4s}
+.lstep b{display:block;font-size:15.5px}
+.lstep span{font-size:14px;color:var(--muted);line-height:1.5}
+.lstep.on{border-color:var(--k);box-shadow:0 0 0 3px color-mix(in srgb,var(--k) 16%,transparent)}
+.lstep.on .n{background:var(--k);color:#fff}
+.lnode{transition:all .4s}
+/* M layers */
+.layers{display:grid;grid-template-columns:1fr 1.05fr;gap:30px;align-items:center}
+.iso{position:relative;height:380px;perspective:1100px}
+.iso .pl{position:absolute;left:50%;width:280px;height:280px;margin-left:-140px;border-radius:26px;transform:rotateX(58deg) rotateZ(-45deg);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:28px;transition:transform .5s,box-shadow .5s,filter .5s;border:1px solid rgba(255,255,255,.5)}
+.iso .pl i{border-radius:9px;background:rgba(255,255,255,.35)}
+.iso .p1{top:124px;background:linear-gradient(135deg,#0b3d91,#2a5fb8);box-shadow:0 40px 60px rgba(11,61,145,.35)}
+.iso .p2{top:78px;background:linear-gradient(135deg,#1e6fd9,#5aa2f2)}
+.iso .p3{top:32px;background:linear-gradient(135deg,#0f9b6c,#3ccf98)}
+.iso .p4{top:-14px;background:linear-gradient(135deg,#6d3fd6,#a88cfa)}
+.iso .pl.on{transform:rotateX(58deg) rotateZ(-45deg) translateZ(28px);filter:brightness(1.1);box-shadow:0 0 0 4px rgba(255,255,255,.75),0 30px 60px rgba(13,30,70,.35)}
+.lvl{display:flex;flex-direction:column;gap:10px}
+.lvl button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:64px 1fr;gap:12px;padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--cardline);transition:border-color .3s,box-shadow .3s,transform .3s,opacity .6s}
+.lvl button:focus-visible{outline:2px solid var(--b)}
+.lvl button.on{border-color:var(--k);box-shadow:0 0 0 3px color-mix(in srgb,var(--k) 18%,transparent);transform:translateX(-4px)}
+.lvl small{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--k);padding-top:3px}
+.lvl b{display:block;font-size:16px;line-height:1.3}
+.lvl em{font-style:normal;font-size:12.5px;color:var(--muted)}
+.lvl span{display:block;font-size:14px;color:var(--muted);line-height:1.5;margin-top:3px}
+/* M value chain */
+.vc .grp{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin:0 0 8px 2px}
+.vsup{border-radius:16px;background:var(--card);border:1px solid var(--cardline);box-shadow:var(--shadow);overflow:hidden}
+.vrow{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center;padding:11px 16px;border-bottom:1px solid var(--cardline)}
+.vrow:last-child{border-bottom:0}
+.vrow .nm{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px}
+.vrow .nm i{width:30px;height:30px;border-radius:9px;background:var(--bs);color:var(--b);display:grid;place-items:center;flex:none}
+.vrow .nm i svg{width:16px;height:16px}
+.vprim{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:20px}
+.chev{position:relative;height:66px;display:flex;align-items:center;padding:0 18px 0 26px;color:#fff;font-weight:700;font-size:13.5px;line-height:1.25;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%,16px 50%)}
+.vprim>div:first-child .chev{clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%);padding-left:16px}
+.chev small{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;opacity:.8;text-transform:uppercase}
+.chev::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:translateX(-100%);animation:chv 4s ease-in-out infinite;animation-delay:var(--dl)}
+@keyframes chv{40%,100%{transform:translateX(100%)}}
+.vprim .chips{padding:10px 4px 0;display:flex;flex-direction:column;gap:5px}
+.vprim .chips span{font-size:12.5px;padding:6px 10px;border-radius:9px;background:var(--card);border:1px solid var(--cardline);line-height:1.35}
+.vend{margin-top:16px;display:flex;align-items:center;gap:12px;justify-content:flex-end;font-size:13.5px;font-weight:600;color:var(--bd)}
+.vend .ln{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--b));border-radius:2px}
+.vend span{padding:7px 14px;border-radius:999px;background:var(--bs);color:var(--b)}
+/* M JD */
+.jd{display:grid;grid-template-columns:240px 90px 1fr;align-items:stretch}
+.jdcard{padding:20px;align-self:center}
+.jdcard h6{margin:12px 0 2px;font-size:18px;line-height:1.3}
+.jdcard .bl{margin-top:14px}
+.jdcard .bl small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.sk{display:block;height:7px;border-radius:4px;background:var(--soft);margin:6px 0;position:relative;overflow:hidden}
+.sk::after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--b) 25%,transparent),transparent);animation:shim 2.6s infinite}
+@keyframes shim{to{transform:translateX(100%)}}
+.jdlinks{width:100%;height:100%}
+.jdlinks path{fill:none;stroke:var(--b);stroke-width:1.6;stroke-opacity:.55;stroke-dasharray:5 6;animation:dash 1.6s linear infinite;vector-effect:non-scaling-stroke}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.svlist{display:flex;flex-direction:column;justify-content:space-between;gap:9px}
+.sv{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:10px 14px}
+.sv .ico{width:42px;height:42px;border-radius:12px;background:var(--bs);color:var(--b);display:grid;place-items:center}
+.sv .ico svg{width:20px;height:20px}
+.sv b{display:block;font-size:14.5px;line-height:1.3}
+.sv span{display:block;font-size:12.8px;color:var(--muted);line-height:1.4}
+.sv em{font-style:normal;font-size:11px;font-weight:700;color:var(--b);background:var(--bs);padding:3px 8px;border-radius:6px;white-space:nowrap}
+.insight{margin-top:16px;display:flex;gap:12px;align-items:center;padding:12px 16px;border-radius:12px;background:var(--card);border:1px dashed var(--cardline);font-size:14.5px}
+/* M service */
+.svc{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:12px}
+.svc .c{padding:14px 16px;font-size:13.6px;line-height:1.5}
+.svc .c ul{margin:8px 0 0;padding-left:18px}
+.s-ru{--k:var(--in);grid-column:1;grid-row:1}.s-ap{--k:var(--wn);grid-column:2;grid-row:1}.s-da{--k:var(--cy);grid-column:3;grid-row:1}
+.s-in{--k:var(--b);grid-column:1;grid-row:2}.s-out{--k:var(--ok);grid-column:3;grid-row:2}
+.s-own{grid-column:1/4;grid-row:3;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.s-own .who{display:flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:999px;background:var(--card);border:1px solid var(--cardline);font-size:13px}
+.s-own .who i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:10.5px;color:#fff;background:var(--k)}
+.s-core{grid-column:2;grid-row:2;border-radius:18px;padding:18px;color:#fff;background:linear-gradient(145deg,#1e6fd9,#4651d6 60%,#6d3fd6);box-shadow:0 20px 50px rgba(30,80,200,.35)}
+.s-core small{font-size:10.5px;font-weight:700;letter-spacing:.14em;opacity:.85}
+.s-core h6{margin:5px 0 16px;font-size:18.5px;line-height:1.3}
+.steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr);text-align:center;font-size:10.8px;line-height:1.3}
+.steps::before{content:"";position:absolute;left:10%;right:10%;top:13px;height:3px;border-radius:2px;background:rgba(255,255,255,.25)}
+.steps .fill{position:absolute;left:10%;top:13px;height:3px;border-radius:2px;background:#fff;box-shadow:0 0 10px #bfe0ff;width:0;transition:width .7s ease}
+.steps span{position:relative;padding:0 2px}
+.steps span i{display:grid;place-items:center;width:28px;height:28px;margin:0 auto 6px;border-radius:50%;background:#3a5fe0;border:2px solid rgba(255,255,255,.6);font-style:normal;font-weight:700;font-size:12px;transition:all .4s}
+.steps span.on i{background:#fff;color:#2c55d8;border-color:#fff;box-shadow:0 0 0 5px rgba(255,255,255,.2)}
+.s-out .rec{margin-top:10px;padding:8px 10px;border-radius:10px;background:var(--oks);color:var(--ok);font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:8px;opacity:.3;transition:opacity .5s}
+.s-out .rec.on{opacity:1}
+/* readiness */
+.rtable{width:100%;border-collapse:separate;border-spacing:0 8px;font-size:14px}
+.rtable th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px;font-weight:700}
+.rtable td{background:var(--card);padding:12px 10px;border-top:1px solid var(--cardline);border-bottom:1px solid var(--cardline)}
+.rtable td:first-child{border-left:1px solid var(--cardline);border-radius:12px 0 0 12px;font-weight:600}
+.rtable td:last-child{border-right:1px solid var(--cardline);border-radius:0 12px 12px 0}
+.meter{display:flex;gap:4px}
+.meter i{width:20px;height:8px;border-radius:3px;background:var(--soft)}
+.meter[data-v="5"] i{background:var(--ok)}
+.meter[data-v="4"] i:nth-child(-n+4){background:var(--ok)}
+.meter[data-v="3"] i:nth-child(-n+3){background:var(--wn)}
+.meter[data-v="1"] i:nth-child(-n+1){background:var(--rd)}
+.dt{display:inline-flex;align-items:center;gap:6px;font-size:13px;white-space:nowrap}
+.dt::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--z)}
+.g{--z:var(--ok)}.y{--z:var(--wn)}.r{--z:var(--rd)}
+/* output */
+.outg{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.chain{display:flex;flex-direction:column;gap:10px}
+.lnk{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;padding:12px 14px;transition:border-color .4s,box-shadow .4s,opacity .6s,transform .6s}
+.lnk .n{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:700;background:var(--soft);color:var(--muted);transition:all .4s}
+.lnk b{display:block;font-size:15px}
+.lnk span{font-size:13.5px;color:var(--muted)}
+.lnk.on{border-color:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 15%,transparent)}
+.lnk.on .n{background:var(--ok);color:#fff}
+.feed{padding:16px;display:flex;flex-direction:column}
+.feed h6{margin:0 0 2px;font-size:15px}
+.feed .sub2{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.feed ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.feed li{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;padding:9px 10px;border-radius:10px;background:var(--soft);font-size:13px;line-height:1.35;animation:slidein .6s both}
+.feed li .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;background:var(--b)}
+.feed li .av.ai{background:var(--ai)}
+.feed li small{display:block;color:var(--muted);font-size:11.5px}
+@keyframes slidein{from{opacity:0;transform:translateY(-8px)}}
+.kpi{margin-top:auto;padding-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kpi div{padding:10px;border-radius:10px;border:1px solid var(--cardline);font-size:12px;color:var(--muted)}
+.kpi b{display:block;font-size:13.5px;color:var(--ink)}
+.kpi .bar{height:6px;border-radius:3px;background:var(--soft);margin-top:6px;overflow:hidden;padding:0;border:0}
+.kpi .bar i{display:block;height:100%;background:var(--ok);border-radius:3px;width:var(--w);transition:width 1.2s ease}
+.mk.pre .kpi .bar i{width:0}
+/* agent */
+.agent{display:grid;grid-template-columns:1fr 300px 1fr;gap:0;align-items:center}
+.agcol{display:flex;flex-direction:column;gap:18px}
+.cap{position:relative;padding:14px 16px;display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:center}
+.cap .d{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:#fff;background:var(--k)}
+.cap .d svg{width:20px;height:20px}
+.cap b{display:block;font-size:15px;line-height:1.3}
+.cap span{font-size:13px;color:var(--muted);line-height:1.4}
+.cap::after{content:"";position:absolute;top:50%;width:34px;height:2px;background:repeating-linear-gradient(90deg,var(--k) 0 5px,transparent 5px 10px);background-size:20px 2px;animation:flow 1s linear infinite}
+.agcol.l .cap::after{right:-35px}
+.agcol.r .cap::after{left:-35px;animation-direction:reverse}
+@keyframes flow{to{background-position:20px 0}}
+.orb{position:relative;width:280px;height:280px;margin:0 auto}
+.orb svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.orb svg text{font-family:var(--font)}
+.orb .seg{fill:none;stroke-width:14;stroke-linecap:round;stroke:color-mix(in srgb,var(--ai) 22%,transparent);transition:stroke .4s}
+.orb .seg.on{stroke:var(--ai)}
+.orb .lb{font-size:11px;font-weight:700;fill:var(--muted);transition:fill .4s}
+.orb .lb.on{fill:var(--ai)}
+.orb .center{position:absolute;inset:62px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8b5cf6,#4a23a8);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 20px 50px rgba(90,40,200,.45),0 0 0 8px color-mix(in srgb,var(--ai) 12%,transparent)}
+.orb .center svg{position:static;width:30px;height:30px}
+.orb .center b{display:block;font-size:14px;letter-spacing:.14em;margin-top:2px}
+.orb .center small{display:block;font-size:11px;opacity:.85}
+.mdl{margin:18px auto 0;max-width:520px;text-align:center;padding:10px 14px;border-radius:12px;background:var(--card);border:1px solid var(--cardline);font-size:13px;color:var(--muted)}
+.mdl b{color:var(--ink)}
+/* compare */
+.cmp{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0 22px}
+.cmp>div{padding:16px;border-radius:16px;background:var(--paper);border:1px solid var(--line);font-size:14px;line-height:1.5}
+.cmp>div b{display:block;font-size:16px;margin:6px 0 6px}
+.cmp>div small{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.cmp>div .ex{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted)}
+.cmp>div.hl{border-color:var(--ai);box-shadow:0 0 0 3px color-mix(in srgb,var(--ai) 14%,transparent);background:linear-gradient(160deg,var(--ais),var(--paper) 60%)}
+.cmp>div.hl b{color:var(--ai)}
+.lvls{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 22px}
+.lv{padding:18px;border-radius:18px;background:var(--paper);border:1px solid var(--line)}
+.lv .bars{display:flex;gap:4px;margin:10px 0 12px}
+.lv .bars i{flex:1;height:7px;border-radius:4px;background:var(--ais)}
+.lv .bars i.f{background:var(--ai)}
+.lv b{display:block;font-size:17px}
+.lv small{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ai);text-transform:uppercase}
+.lv p{margin:6px 0 0;font-size:14px;color:var(--muted);line-height:1.5}
+.lv .ex{margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--soft);font-size:13.5px;line-height:1.5}
+/* hire / onboarding */
+.onb{display:grid;grid-template-columns:270px 1fr;gap:18px;align-items:start}
+.prof{border-radius:20px;background:var(--card);border:1px solid var(--cardline);box-shadow:var(--shadow);overflow:hidden}
+.prof .cv{height:84px;background:linear-gradient(135deg,#4a23a8,#8b5cf6 60%,#1e6fd9)}
+.prof .av{width:76px;height:76px;margin:-42px auto 8px;border-radius:22px;background:var(--card);border:4px solid var(--card);display:grid;place-items:center;color:var(--ai);box-shadow:0 8px 24px rgba(90,40,200,.25);position:relative}
+.prof .av svg{width:38px;height:38px}
+.prof .av::after{content:"";position:absolute;right:-4px;bottom:-4px;width:16px;height:16px;border-radius:50%;background:#22c55e;border:3px solid var(--card)}
+.prof .nm{text-align:center;padding:0 16px}
+.prof .nm b{display:block;font-size:17px}
+.prof .nm small{font-size:12.5px;color:var(--muted)}
+.prof dl{margin:14px 16px 0;padding:0;font-size:13px}
+.prof dl div{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--cardline)}
+.prof dt{color:var(--muted)}.prof dd{margin:0;font-weight:600;text-align:right}
+.prof .stt{margin:12px 16px 16px;padding:10px 12px;border-radius:12px;background:var(--ais);font-size:12.5px;font-weight:600;color:var(--ai)}
+.prof .stt .pg{height:6px;border-radius:3px;background:color-mix(in srgb,var(--ai) 18%,transparent);margin-top:7px;overflow:hidden}
+.prof .stt .pg i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#6d3fd6,#0f9b6c);transition:width .6s}
+.tl{position:relative;display:flex;flex-direction:column;gap:12px}
+.tl::before{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:2px;background:var(--cardline)}
+.stg{position:relative;display:grid;grid-template-columns:40px 1fr;gap:14px}
+.stg .dot{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:2px solid var(--cardline);font-weight:700;color:var(--muted);transition:all .4s}
+.stg.on .dot,.stg.done .dot{background:var(--k);border-color:var(--k);color:#fff}
+.stg.on .dot{box-shadow:0 0 0 6px color-mix(in srgb,var(--k) 18%,transparent)}
+.stg .bx2{padding:12px 14px}
+.stg .bx2 b{font-size:15px}
+.stg .bx2 small{display:block;font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.stg ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.stg li{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:5px 10px;border-radius:999px;background:var(--soft);transition:all .3s}
+.stg li i{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--cardline);display:grid;place-items:center;font-style:normal;font-size:9px;color:transparent}
+.stg li.ok{background:color-mix(in srgb,var(--k) 12%,transparent)}
+.stg li.ok i{background:var(--k);border-color:var(--k);color:#fff}
+/* matrix */
+.mtx{display:grid;grid-template-columns:34px 1fr 1fr;grid-template-rows:1fr 1fr 34px;gap:10px;position:relative}
+.mtx .ya{grid-row:1/3;grid-column:1;position:relative}
+.mtx .ya::before{content:"";position:absolute;left:50%;top:4px;bottom:0;width:2px;background:var(--muted);opacity:.5}
+.mtx .ya::after{content:"";position:absolute;left:calc(50% - 6px);top:0;border:6px solid transparent;border-bottom:9px solid var(--muted);border-top:0;opacity:.7}
+.mtx .ya span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-90deg);white-space:nowrap;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;background:var(--stage);padding:0 8px}
+.mtx .xa{grid-column:2/4;grid-row:3;position:relative}
+.mtx .xa::before{content:"";position:absolute;left:0;right:4px;top:50%;height:2px;background:var(--muted);opacity:.5}
+.mtx .xa::after{content:"";position:absolute;right:0;top:calc(50% - 6px);border:6px solid transparent;border-left:9px solid var(--muted);border-right:0;opacity:.7}
+.mtx .xa span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;background:var(--stage);padding:0 8px}
+.qd{border-radius:18px;padding:16px 18px;min-height:170px;border:1px solid var(--cardline);position:relative;overflow:hidden}
+.qd .qh{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:12px}
+.qd .qh b{font-size:16px;line-height:1.3}
+.qd .qh small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.qd .its{display:flex;flex-direction:column;gap:7px}
+.qd .its span{display:flex;align-items:center;gap:8px;font-size:13.5px;padding:8px 11px;border-radius:11px;background:var(--card);border:1px solid var(--cardline);line-height:1.35}
+.qd .its span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--k);flex:none}
+.q-hx{--k:var(--wn);background:linear-gradient(150deg,var(--wns),var(--card) 70%)}
+.q-hu{--k:var(--rd);background:linear-gradient(150deg,var(--rds),var(--card) 70%)}
+.q-ai{--k:var(--ai);background:linear-gradient(150deg,var(--ais),var(--card) 70%);border-color:color-mix(in srgb,var(--ai) 35%,transparent)}
+.q-hx2{--k:var(--wn);background:linear-gradient(330deg,var(--wns),var(--card) 70%)}
+.qd .big{position:absolute;right:14px;bottom:6px;font-size:54px;font-weight:700;color:var(--k);opacity:.08;line-height:1}
+/* app inbox */
+.app{border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--cardline);box-shadow:0 30px 70px rgba(13,30,70,.16)}
+.app .tb{height:44px;display:flex;align-items:center;gap:10px;padding:0 16px;background:#0b3d91;color:#fff;font-size:14px;font-weight:600}
+.app .tb img{height:20px}
+.app .tb .sr{margin-left:auto;width:220px;max-width:40%;height:26px;border-radius:7px;background:rgba(255,255,255,.14);font-size:12px;font-weight:400;display:flex;align-items:center;padding:0 10px;color:rgba(255,255,255,.75)}
+.app .body{display:grid;grid-template-columns:200px 1fr}
+.app .side{border-right:1px solid var(--cardline);padding:14px 10px;font-size:13px}
+.app .side .who{display:flex;gap:10px;align-items:center;padding:6px 6px 14px;border-bottom:1px solid var(--cardline);margin-bottom:6px}
+.app .side .who i{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#6d3fd6,#8b5cf6);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:13px;flex:none}
+.app .side .who b{display:block;font-size:13.5px;line-height:1.3}
+.app .side .who small{color:var(--muted);font-size:11.5px}
+.app .side h6{margin:12px 6px 4px;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.app .side span.it{display:flex;justify-content:space-between;padding:6px 8px;border-radius:7px}
+.app .side span.it.on{background:var(--bs);color:var(--b);font-weight:600}
+.app .side span.it em{font-style:normal;color:var(--muted);font-size:12px}
+.app .main{padding:16px 18px;min-width:0}
+.app .main h6{margin:0 0 8px;font-size:17px;display:flex;justify-content:space-between;align-items:center}
+.app .main h6 span{font-size:12px;font-weight:600;color:#fff;background:var(--b);padding:5px 10px;border-radius:7px}
+.task{display:grid;grid-template-columns:18px 1fr 120px 90px;gap:12px;align-items:center;padding:10px 6px;border-bottom:1px solid var(--cardline);font-size:13px;line-height:1.35}
+.task.new{animation:newrow 1.6s ease}
+@keyframes newrow{0%{background:color-mix(in srgb,var(--ai) 18%,transparent);opacity:0;transform:translateY(-6px)}30%{opacity:1;transform:none}100%{background:transparent}}
+.task .cb{width:16px;height:16px;border-radius:5px;border:1.5px solid var(--cardline)}
+.task b{display:block;font-size:13.5px;font-weight:600}
+.task small{display:block;color:var(--muted);font-size:12px}
+.task .src{font-size:12px;color:var(--muted)}
+.stt2{font-size:11.5px;font-weight:700;padding:4px 8px;border-radius:999px;text-align:center}
+.st-todo{background:var(--bs);color:var(--b)}.st-doing{background:var(--wns);color:var(--wn)}.st-done{background:var(--oks);color:var(--ok)}
+.princ{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 24px}
+.princ div{padding:18px;border-radius:18px;background:var(--paper);border:1px solid var(--line);font-size:14px;line-height:1.55;color:var(--muted)}
+.princ div i{width:38px;height:38px;border-radius:11px;background:var(--ais);color:var(--ai);display:grid;place-items:center;margin-bottom:10px}
+.princ div i svg{width:20px;height:20px}
+.princ div b{display:block;font-size:16px;color:var(--ink);margin-bottom:4px}
+.ha{display:grid;grid-template-columns:190px 1fr 1fr;gap:10px;font-size:14px}
+.ha .hd{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:0 6px}
+.ha .ar{padding:12px 14px;font-weight:600;line-height:1.35}
+.ha .ar span{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+.ha .x1,.ha .x2{padding:12px 14px;border-radius:14px;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
+.ha .x1{background:var(--ais);border:1px solid color-mix(in srgb,var(--ai) 25%,transparent)}
+.ha .x2{background:var(--bs);border:1px solid color-mix(in srgb,var(--b) 25%,transparent)}
+.ha .x1 svg{color:var(--ai);margin-top:3px}.ha .x2 svg{color:var(--b);margin-top:3px}
+/* orgchart */
+.org{position:relative;padding:10px 0 0}
+.node{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px 14px;border-radius:18px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);width:220px;position:relative}
+.node .av{width:68px;height:68px;border-radius:50%;object-fit:cover;display:grid;place-items:center;background:var(--bs);color:var(--b);font-weight:700;font-size:20px;margin-bottom:10px;box-shadow:0 0 0 4px var(--paper),0 0 0 6px var(--bs)}
+.node b{font-size:15.5px;line-height:1.3}
+.node small{font-size:12.5px;color:var(--b);font-weight:600;margin-top:2px;line-height:1.35}
+.node p{margin:8px 0 0;font-size:12.8px;color:var(--muted);line-height:1.45}
+.node.lead{width:280px;border-color:color-mix(in srgb,var(--b) 40%,transparent);background:linear-gradient(160deg,var(--bs),var(--paper) 65%)}
+.node.lead .av{width:84px;height:84px}
+.node.cp{border-style:dashed;background:var(--soft);box-shadow:none}
+.node.cp .av{background:var(--card);color:var(--muted)}
+.otop{display:flex;justify-content:center;align-items:center;gap:40px;position:relative}
+.olink{position:absolute;top:50%;height:0;border-top:2px dashed var(--muted);opacity:.5}
+.ov{width:2px;height:28px;background:var(--line);margin:0 auto}
+.obranch{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;padding-top:28px}
+.obranch::before{content:"";position:absolute;top:0;left:calc(100%/6);right:calc(100%/6);height:2px;background:var(--line)}
+.ocol{display:flex;flex-direction:column;align-items:center;position:relative}
+.ocol::before{content:"";position:absolute;top:-28px;left:50%;width:2px;height:28px;background:var(--line)}
+.ocol .node{width:100%;max-width:250px}
+.ocol .ov{height:22px}
+.ocol .node.sub{max-width:230px}
+.otag{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);text-transform:uppercase}
+/* roadmap */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:10px 0 26px}
+.phc{position:relative;padding:18px;border-radius:16px;background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.phc::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--c)}
+.phc .no{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--c);text-transform:uppercase}
+.phc b{display:block;font-size:16px;line-height:1.3;margin:4px 0 6px}
+.phc .dtt{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.phc p{margin:8px 0 0;font-size:13.6px;color:var(--muted);line-height:1.5}
+.phc .out{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:13.4px}
+.phc .out em{font-style:normal;font-weight:700;color:var(--ok)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.note{font-size:13.5px;color:var(--muted);margin-top:12px}
+/* next steps */
+.nx{margin-top:16px}
+.nx .mh{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--muted);margin:8px 0 10px}
+.nrow{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:stretch;margin-bottom:12px}
+.nrow .dd{text-align:center;padding-top:10px}
+.nrow .dd small{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.nrow .dd b{display:block;font-size:24px;line-height:1.1;font-variant-numeric:tabular-nums}
+.nrow.hot .dd small,.nrow.hot .dd b{color:var(--rd)}
+.ncard{display:grid;grid-template-columns:22px 1fr auto;gap:14px;align-items:start;padding:16px 18px;border-radius:16px;background:var(--paper);border:1px solid var(--line);transition:box-shadow .3s,transform .3s}
+.ncard:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.ncard .ci{width:20px;height:20px;border-radius:50%;border:2px solid var(--wn);margin-top:3px}
+.ncard .t{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:16.5px;font-weight:600;line-height:1.35}
+.ncard p{margin:6px 0 8px;font-size:14px;color:var(--muted);line-height:1.5}
+.ncard .mt{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font-size:12.5px;color:var(--muted)}
+.ncard .mt b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.ncard .ow{display:inline-flex;align-items:center;gap:6px}
+.ncard .ow i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:9.5px;font-weight:700;color:#fff;background:var(--k,var(--b))}
+.ncard .due{display:inline-flex;align-items:center;gap:5px}
+.ncard .no2{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+.closing{margin:34px 0 0;padding:32px 36px;border-radius:24px;background:linear-gradient(130deg,#061a46,#0b3d91 55%,#1e6fd9);color:#fff;font-size:17.5px;line-height:1.6}
+.src{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.src ol{margin:6px 0 0;padding-left:20px}
+footer{padding-block:40px 60px;padding-inline:20px;text-align:center;font-size:13.5px;color:var(--muted)}
+/* responsive */
+@media (max-width:1100px){
+  .shell{grid-template-columns:1fr;gap:0}
+  nav.toc{position:fixed;left:0;top:58px;bottom:0;max-height:none;width:290px;z-index:70;background:var(--paper);border-right:1px solid var(--line);padding:18px 12px;transform:translateX(-102%);transition:transform .25s;box-shadow:var(--shadow)}
+  nav.toc.open{transform:none}
+  #menuBtn{display:inline-flex}
+  main{max-width:none}
+}
+@media (max-width:900px){
+  .hero .in{grid-template-columns:1fr;padding-top:44px}
+  .orbit{max-width:360px}
+  .top .ttl{display:none}
+  .venn,.loopw,.layers,.outg,.onb{grid-template-columns:1fr}
+  .iso{height:330px;transform:scale(.85)}
+  .vprim{grid-template-columns:1fr 1fr}
+  .jd{grid-template-columns:1fr;gap:14px}.jdlinks{display:none}
+  .svc{grid-template-columns:1fr}.svc>*{grid-column:1!important;grid-row:auto!important}
+  .agent{grid-template-columns:1fr;gap:16px}.cap::after{display:none}.orb{width:260px;height:260px}.orb .center{inset:58px}
+  .cmp{grid-template-columns:1fr 1fr}.lvls,.princ{grid-template-columns:1fr}
+  .obranch{grid-template-columns:1fr;padding-top:0}.obranch::before,.ocol::before{display:none}.ocol{margin-top:18px}.otop{flex-direction:column;gap:14px}.olink{display:none}
+  .phases{grid-template-columns:1fr 1fr}
+  .app .body{grid-template-columns:1fr}.app .side{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .letter{padding:28px 20px}
+  .trio,.cmp,.phases{grid-template-columns:1fr}
+  .stage{padding:16px 14px 20px;border-radius:18px}
+  .vrow{grid-template-columns:1fr}
+  .vprim{grid-template-columns:1fr}
+  .chead .n{font-size:58px}
+  .hm{grid-template-columns:1fr;gap:4px}
+  .mtx{grid-template-columns:1fr;grid-template-rows:auto}.mtx .ya,.mtx .xa{display:none}
+  .ha{grid-template-columns:1fr}.ha .hd{display:none}
+  .task{grid-template-columns:18px 1fr 84px}.task .src{display:none}
+  .deliv li{grid-template-columns:28px 1fr}.deliv li em{grid-column:2;justify-self:start}
+  
+  
+  .closing{padding:24px 20px}
+  .iso{transform:scale(.7);height:290px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mk.pre .rv{opacity:1;transform:none}}
+
+.ib svg.ic{width:18px;height:18px}
+h4.sec .k svg{width:18px;height:18px}
+.vnotes .d svg{width:20px;height:20px}
+@media (min-width:1101px){.shell{grid-template-columns:272px minmax(0,1fr)}}
+.toc a{font-size:14px}
+.gt{--gl:330px}
+.gx-p .gx-l b{font-size:14.5px}
+.gx-k .gx-l{font-size:13px}
+.gx-k .gx-l{padding-left:62px}
+.gx-k .gx-t,.gx-k .gx-l{min-height:36px}
+.toc a .n svg{width:14px;height:14px;stroke-width:2.6;vertical-align:-2px}
+.call .i svg{width:18px;height:18px}
+.chead .n{min-width:64px}
+
+.tth{display:flex;align-items:center;gap:6px;margin:0 0 10px 4px;position:relative}
+.toc .tth .tt{margin:0}
+.tgl{all:unset;box-sizing:border-box;cursor:pointer;width:34px;height:34px;border-radius:9px;display:none;place-items:center;color:var(--ink);position:relative}
+.tgl:hover{background:var(--soft)}
+.tgl:focus-visible{outline:2px solid var(--b)}
+.tgl svg.ic{width:18px;height:18px}
+.tgl[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:0;top:40px;white-space:nowrap;background:#1d2433;color:#fff;font-size:12px;font-weight:500;padding:5px 9px;border-radius:7px;z-index:5;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+@media (min-width:1101px){
+ .tgl{display:grid}
+ .shell{transition:grid-template-columns .25s ease}
+ html.toc-min .shell{grid-template-columns:60px minmax(0,1fr)}
+ html.toc-min nav.toc{overflow:visible;z-index:30}
+ html.toc-min .toc .tt,html.toc-min .toc .l3,html.toc-min .toc .tx{display:none}
+ html.toc-min .toc .tth{margin-left:3px}
+ html.toc-min .toc a{position:relative;justify-content:center;width:40px;height:36px;box-sizing:border-box;padding:0;margin:4px 0 0 0;align-items:center;border-radius:10px}
+ html.toc-min .toc a .n{min-width:0;text-align:center}
+ html.toc-min .toc .l1{margin-top:14px;background:var(--soft);color:var(--ink)}
+ html.toc-min .toc .l2 .n{font-size:13px;color:var(--muted)}
+ html.toc-min .toc a.on,html.toc-min .toc a.pon{background:var(--b);color:#fff}
+ html.toc-min .toc a.on .n,html.toc-min .toc a.pon .n{color:#fff}
+ html.toc-min .toc a:hover::after{content:attr(data-tip);position:absolute;left:50px;top:50%;transform:translateY(-50%);white-space:nowrap;background:#1d2433;color:#fff;font-size:12px;font-weight:500;padding:5px 9px;border-radius:7px;z-index:5;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+ html.toc-min .tgl[data-tip]:hover::after{left:42px;top:50%;transform:translateY(-50%)}
+}
+/* Gantt */
+.gw{overflow-x:auto;border-radius:20px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow);padding:6px 0 10px}
+.gt{min-width:760px;position:relative}
+.gx-h{display:grid;grid-template-columns:var(--gl,250px) 1fr;border-bottom:1px solid var(--line)}
+.gx-hl{display:flex;align-items:flex-end;padding:0 20px 10px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.gx-ht{position:relative;height:60px;margin-right:20px}
+.gx-mo div{position:absolute;top:10px;font-size:14px;font-weight:700;color:var(--ink);padding-left:8px;white-space:nowrap}
+.gx-mo div::before{content:"";position:absolute;left:0;top:3px;bottom:3px;width:3px;border-radius:2px;background:var(--b)}
+.gx-wk span{position:absolute;bottom:9px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;transform:translateX(-1px)}
+.gx-b{position:relative;padding:6px 0}
+.gx-lines{position:absolute;top:0;bottom:0;left:var(--gl,250px);right:20px;pointer-events:none}
+.gx-lines i{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed color-mix(in srgb,var(--muted) 30%,transparent)}
+.gx-r{display:grid;grid-template-columns:var(--gl,250px) 1fr;align-items:center}
+.gx-l{padding:0 20px;font-size:14px;line-height:1.35;display:flex;align-items:center;gap:10px}
+.gx-t{position:relative;height:100%;min-height:38px;margin-right:20px}
+.gx-m{margin-bottom:6px}
+.gx-m .gx-l{font-weight:600;color:var(--muted);font-size:13px}
+.gx-ic{width:26px;height:26px;border-radius:8px;background:var(--soft);display:grid;place-items:center;color:var(--ink)}
+.gx-ms{position:absolute;top:50%;width:24px;height:24px;margin:-12px 0 0 -12px;display:grid;place-items:center}
+.gx-ms::before{content:"";position:absolute;inset:3px;transform:rotate(45deg);border-radius:4px;background:var(--ink)}
+.gx-ms b{position:relative;color:var(--paper);font-size:10.5px;font-weight:700}
+.gx-p{margin-top:14px}
+.gx-p .gx-t{min-height:46px}
+.gx-p .gx-l b{font-size:15px;line-height:1.3}
+.gx-no{flex:none;font-size:11px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent);padding:3px 7px;border-radius:7px}
+.gx-k .gx-l{color:var(--muted);padding-left:66px;font-size:13.5px}
+.gx-k .gx-t{min-height:34px}
+.gx-bar{position:absolute;top:50%;height:28px;margin-top:-14px;border-radius:9px;background:linear-gradient(90deg,var(--c),color-mix(in srgb,var(--c) 72%,#fff));box-shadow:0 6px 14px color-mix(in srgb,var(--c) 28%,transparent);display:flex;align-items:center;padding:0 10px;overflow:hidden;transform-origin:left;transition:transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.gx-bar span{color:#fff;font-size:12px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.gx-bar.t{height:10px;margin-top:-5px;border-radius:5px;background:color-mix(in srgb,var(--c) 45%,transparent);box-shadow:none;padding:0}
+.gx-k em{position:absolute;top:50%;transform:translateY(-50%);font-style:normal;font-size:11.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.gw.pre .gx-bar{transform:scaleX(0)}
+.legend{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0 0}
+.lg-m{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:14px;background:var(--paper);border:1px solid var(--line);font-size:13px;line-height:1.35;font-weight:600}
+.lg-m b{display:grid;place-items:center;width:20px;height:20px;border-radius:6px;background:var(--ink);color:var(--paper);font-size:10.5px;margin-bottom:4px}
+.lg-m em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+/* Lịch tháng */
+.ctabs{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin-top:18px}
+.ctabs button{all:unset;cursor:pointer;padding:8px 14px;border-radius:10px;font-size:14px;font-weight:600;color:var(--muted);border:1px solid transparent}
+.ctabs button.on{background:var(--paper);color:var(--ink);border-color:var(--line);box-shadow:0 2px 10px rgba(15,37,80,.08)}
+.ctabs button:focus-visible{outline:2px solid var(--b)}
+.mc-lg{margin-left:auto;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted)}
+.mc-lg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.mc-lg i.k{background:var(--ink)}.mc-lg i.n{background:var(--wns);border:1px solid var(--wn)}
+.wcal{margin-top:12px;overflow-x:auto;border-radius:20px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow)}
+.mc{min-width:680px}
+.mc-h{display:grid;grid-template-columns:repeat(7,1fr);border-bottom:1px solid var(--line)}
+.mc-h div{padding:12px 12px 10px;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mw{position:relative;min-height:104px;border-bottom:1px solid var(--line)}
+.mw:last-child{border-bottom:0}
+.mw-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr)}
+.mw-bg div{border-left:1px solid var(--line);padding:8px 10px}
+.mw-bg div:first-child{border-left:0}
+.mw-bg div.we{background:color-mix(in srgb,var(--soft) 55%,transparent)}
+.mw-bg div.out .dn{opacity:.35}
+.mw-bg .dn{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.mw-bg div.ev .dn{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 4px;border-radius:12px;background:var(--wn);color:#fff}
+.mw-ly{position:relative;display:grid;grid-template-columns:repeat(7,1fr);row-gap:5px;padding:38px 0 10px}
+.mb{height:24px;display:flex;align-items:center;background:var(--c);color:#fff;font-size:11.5px;font-weight:600;padding:0 10px;white-space:nowrap;overflow:hidden}
+.mb.s{margin-left:6px;border-top-left-radius:8px;border-bottom-left-radius:8px}
+.mb.e{margin-right:6px;border-top-right-radius:8px;border-bottom-right-radius:8px}
+.mb span{overflow:hidden;text-overflow:ellipsis}
+.me{display:flex;flex-direction:column;gap:4px;padding:0 6px}
+.me span{display:flex;gap:5px;align-items:flex-start;font-size:11.5px;line-height:1.35;padding:5px 7px;border-radius:8px;font-weight:500}
+.me span.k{background:var(--ink);color:var(--paper)}
+.me span.k svg{width:12px;height:12px;margin-top:2px}
+.me span.n{background:var(--wns);color:var(--ink);box-shadow:inset 3px 0 0 var(--wn)}
+@media (max-width:640px){.legend{grid-template-columns:1fr 1fr}.mc-lg{margin-left:0}.gt{--gl:230px;min-width:720px}.gx-k .gx-l{padding-left:20px}}
+/* Bố cục giãn theo màn hình: chữ giữ độ rộng dễ đọc, hình và bảng giãn theo chiều ngang */
+.top .in,.hero .in,.shell{max-width:1760px}
+main section>:is(p,ul,ol,h4,h5),main .ai-c>:is(p,ul,ol,h4,h5),main .lead2{max-width:860px}
+main .letter{max-width:1040px}
+/* Chuỗi giá trị */
+.vc2 .blk{display:flex;align-items:center;gap:10px;margin:22px 0 12px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.vc2 .fh+.blk{margin-top:6px}
+.vc2 .blk i{width:4px;height:16px;border-radius:2px;background:var(--b)}
+.vc2 .blk i.g{background:var(--ok)}.vc2 .blk i.s{background:var(--ai)}
+.vc2 .blk small{font-size:12px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted)}
+.vc2 .core{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.vc2 .cb{position:relative;display:flex;flex-direction:column;padding:16px 26px 14px 16px;background:linear-gradient(180deg,color-mix(in srgb,var(--b) 10%,var(--card)),var(--card));border-top:3px solid #0f2550;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%,0 0)}
+:root[data-theme="dark"] .vc2 .cb{border-top-color:#8fb4ff}
+.vc2 .cb:not(:first-child){padding-left:24px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%,14px 50%)}
+.vc2 .cbh em{display:block;font-style:normal;font-size:26px;font-weight:700;line-height:1;color:var(--b);letter-spacing:-.02em}
+.vc2 .cbh b{display:block;font-size:15px;line-height:1.3;margin:6px 0 6px;min-height:39px}
+.vc2 .cb p{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:var(--muted);flex:1}
+.vc2 .svs{display:flex;flex-wrap:wrap;gap:5px}
+.vc2 .svs span{font-size:11.5px;line-height:1.3;padding:4px 8px;border-radius:7px;background:var(--card);border:1px solid var(--cardline);color:var(--ink)}
+.vc2 .gate{align-self:flex-start;margin-top:12px;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--b);background:var(--bs);padding:4px 9px;border-radius:999px}
+.vc2 .gate svg{width:12px;height:12px}
+.vc2 .axis{margin:18px 0 4px}
+.vc2 .ax-line{position:relative;height:3px;border-radius:2px;background:linear-gradient(90deg,#0f2550 0 20%,var(--b) 20% 80%,#5c9cf0 80%)}
+.vc2 .ax-dot{position:absolute;top:50%;left:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#fff;border:3px solid var(--b);box-shadow:0 0 0 5px color-mix(in srgb,var(--b) 20%,transparent);animation:axrun 7s linear infinite}
+@keyframes axrun{from{left:0}to{left:100%}}
+.vc2 .ax-lb{display:grid;grid-template-columns:1fr 3fr 1fr;margin-top:12px}
+.vc2 .ax-lb div{position:relative;padding-right:12px;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.vc2 .ax-lb div:last-child{text-align:right;padding-right:0}
+.vc2 .ax-lb div:nth-child(2){text-align:center}
+.vc2 .ax-lb i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#0f2550;color:#fff;font-style:normal;font-size:10.5px;font-weight:700;margin-right:6px;vertical-align:-2px}
+.vc2 .ax-lb div:nth-child(2) i{background:var(--b)}.vc2 .ax-lb div:nth-child(3) i{background:#5c9cf0}
+.vc2 .ax-lb b{color:var(--ink);font-size:14px}
+.vc2 .ax-lb span{display:block;margin-top:3px}
+.vc2 .pw{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:linear-gradient(90deg,var(--oks),var(--card) 70%);border:1px solid color-mix(in srgb,var(--ok) 25%,transparent)}
+.vc2 .pw .ico,.vc2 .sb .ico{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;background:var(--ok)}
+.vc2 .pw .ico svg,.vc2 .sb .ico svg{width:18px;height:18px}
+.vc2 .sup{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.vc2 .sb{padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--cardline)}
+.vc2 .sb .ico{background:var(--ai);width:30px;height:30px;border-radius:9px;margin-bottom:8px}
+.vc2 .sb .ico svg{width:16px;height:16px}
+.vc2 .sbh em{display:block;font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--ai)}
+.vc2 .sbh b{display:block;font-size:14.5px;margin:2px 0 8px}
+.vc2 .sb p{margin:0;padding:6px 0;border-top:1px dashed var(--cardline);font-size:12.5px;line-height:1.45;color:var(--muted)}
+@media (max-width:900px){.vc2 .core{grid-template-columns:1fr}.vc2 .cb,.vc2 .cb:not(:first-child){clip-path:none;padding:14px 16px;border-radius:0 0 12px 12px}.vc2 .cbh b{min-height:0}.vc2 .sup{grid-template-columns:1fr 1fr}.vc2 .ax-lb{grid-template-columns:1fr;gap:8px}.vc2 .ax-lb div,.vc2 .ax-lb div:nth-child(2),.vc2 .ax-lb div:last-child{text-align:left}}
+@media (max-width:640px){.vc2 .blk{flex-wrap:wrap;row-gap:2px}.vc2 .blk small{flex-basis:100%;padding-left:14px}.vc2 .sup{grid-template-columns:1fr}.vc2 .pw{align-items:flex-start}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-doc" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></symbol>
+ <symbol id="i-rule" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+ <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+ <symbol id="i-data" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+ <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+ <symbol id="i-person" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+ <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+ <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+ <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+ <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+ <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol>
+ <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></symbol>
+ <symbol id="i-cash" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></symbol>
+ <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+ <symbol id="i-caldays" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></symbol>
+ <symbol id="i-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="m7.5 4.27 9 5.15"/></symbol>
+ <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+ <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></symbol>
+ <symbol id="i-gear" viewBox="0 0 24 24"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></symbol>
+ <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+ <symbol id="i-build" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+ <symbol id="i-build_old" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol>
+ <symbol id="i-chip" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+ <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+ <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></symbol>
+ <symbol id="i-gantt" viewBox="0 0 24 24"><path d="M8 6h10"/><path d="M6 12h9"/><path d="M11 18h7"/></symbol>
+ <symbol id="i-listc" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+ <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="in">
+    <button class="ib" id="menuBtn" aria-label="Mở mục lục"><svg class="ic"><use href="#i-menu"/></svg></button>
+    <a class="brand" href="#top"><img class="lg" src="assets/logo/base-vn.png" alt="Base.vn"><span class="x">×</span><img class="lg ng" src="assets/logo/nagaco.png" alt="Nagaco"></a>
+    <span class="ttl">Đề xuất <b>Agentic Enterprise Transformation</b></span>
+    <span class="sp"></span>
+    <button class="ib" id="themeBtn" aria-label="Đổi giao diện sáng tối"><svg class="ic"><use href="#i-contrast"/></svg></button>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<section class="hero" id="top">
+  <div class="in">
+    <div>
+      <div class="ey"><i></i>Đề xuất dự án · Tóm tắt điều hành</div>
+      <h1>Agentic Enterprise <em>Transformation</em> tại Nagaco</h1>
+      <p class="lead">Quy hoạch hoạt động quản trị và vận hành định hướng dịch vụ, đồng thời xây dựng và huấn luyện lực lượng lao động số, để CBCNV và AI cùng vận hành doanh nghiệp trên một nền tảng chung.</p>
+      <div class="meta">
+        <div><small>Kính gửi</small><b>Ban lãnh đạo Công ty Cổ phần May Nam Định</b>Nagaco</div>
+        <div><small>Đơn vị đề xuất</small><b>Công ty Cổ phần Base Enterprise</b>Tháng 10/2026</div>
+      </div>
+    </div>
+    <div class="orbit" aria-hidden="true">
+      <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+      <div class="spin">
+        <div class="sat" style="--a:0deg;--r:calc(50cqw - 4px)"><span><i></i>Đánh giá nhà cung cấp</span></div>
+        <div class="sat" style="--a:72deg;--r:calc(50cqw - 4px)"><span><i></i>Đề nghị cấp vật tư</span></div>
+        <div class="sat" style="--a:144deg;--r:calc(50cqw - 4px)"><span><i></i>Theo dõi đơn hàng (PO)</span></div>
+        <div class="sat" style="--a:216deg;--r:calc(50cqw - 4px)"><span><i></i>Duyệt mẫu khách hàng</span></div>
+        <div class="sat" style="--a:288deg;--r:calc(50cqw - 4px)"><span><i></i>Đánh giá hiệu suất</span></div>
+      </div>
+      <div class="spin s2">
+        <div class="sat" style="--a:40deg;--r:35cqw"><span><i></i>AI Agent mua sắm</span></div>
+        <div class="sat" style="--a:160deg;--r:35cqw"><span><i></i>AI Agent đơn hàng</span></div>
+        <div class="sat" style="--a:280deg;--r:35cqw"><span><i></i>AI Agent chất lượng</span></div>
+      </div>
+      <div class="core"><div><b>NAGACO</b><small>Dịch vụ + Nhân sự số</small></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="shell">
+<nav class="toc" id="toc" aria-label="Mục lục">
+  <div class="tth"><button class="tgl" id="tocTgl" type="button" aria-label="Thu gọn mục lục" data-tip="Thu gọn mục lục"><svg class="ic"><use href="#i-menu"/></svg></button><span class="tt">Mục lục</span></div>
+  <a class="l1" href="#thu-ngo" data-tip="Thư ngỏ"><span class="n">A</span><span class="tx">Thư ngỏ</span></a>
+  <a class="l1" href="#noi-dung" data-tip="Nội dung dự án"><span class="n">B</span><span class="tx">Nội dung dự án</span></a>
+  <a class="l2" href="#h21" data-tip="Vận hành định hướng dịch vụ"><span class="n">1</span><span class="tx">Vận hành định hướng dịch vụ</span></a>
+  <a class="l3" href="#h21a" data-tip="Dịch vụ: ngôn ngữ chung"><span class="n">1.1</span><span class="tx">Dịch vụ: ngôn ngữ chung</span></a>
+  <a class="l3" href="#h21b" data-tip="Phương pháp luận 04 tầng"><span class="n">1.2</span><span class="tx">Phương pháp luận 04 tầng</span></a>
+  <a class="l3" href="#h21c" data-tip="Xây dựng từng dịch vụ"><span class="n">1.3</span><span class="tx">Xây dựng từng dịch vụ</span></a>
+  <a class="l3" href="#h21d" data-tip="Kết quả đầu ra"><span class="n">1.4</span><span class="tx">Kết quả đầu ra</span></a>
+  <a class="l3 ck" href="#kq21" data-tip="Kết quả bàn giao"><span class="n"><svg class="ic"><use href="#i-check"/></svg></span><span class="tx">Kết quả bàn giao</span></a>
+  <a class="l2" href="#h22" data-tip="Lực lượng lao động số"><span class="n">2</span><span class="tx">Lực lượng lao động số</span></a>
+  <a class="l3" href="#h22a" data-tip="AI Agent là gì"><span class="n">2.1</span><span class="tx">AI Agent là gì</span></a>
+  <a class="l3" href="#h22b" data-tip="Ba cấp nhân sự số"><span class="n">2.2</span><span class="tx">Ba cấp nhân sự số</span></a>
+  <a class="l3" href="#h22c" data-tip="Tuyển và đào tạo AI Agent"><span class="n">2.3</span><span class="tx">Tuyển và đào tạo AI Agent</span></a>
+  <a class="l3" href="#h22d" data-tip="Đưa AI Agent vào vận hành"><span class="n">2.4</span><span class="tx">Đưa AI Agent vào vận hành</span></a>
+  <a class="l3 ck" href="#kq22" data-tip="Kết quả bàn giao"><span class="n"><svg class="ic"><use href="#i-check"/></svg></span><span class="tx">Kết quả bàn giao</span></a>
+  <a class="l1" href="#lo-trinh" data-tip="Lộ trình tổng quan"><span class="n">C</span><span class="tx">Lộ trình tổng quan</span></a>
+</nav>
+
+<main>
+<section class="ch" id="thu-ngo">
+  <div class="chead"><div class="n">A</div><div><small>Thư ngỏ</small><h2>Tái định nghĩa lợi thế doanh nghiệp trong kỷ nguyên AI</h2></div></div>
+    <article class="letter">
+      <div class="lhead"><img src="assets/team/nghia.jpg" alt="Trần Tuấn Anh Nghĩa"><div><div class="s">Thân gửi Ban lãnh đạo<br>Công ty Cổ phần May Nam Định (Nagaco)</div></div></div>
+      <h4 style="margin-top:0">Điều gì khiến doanh nghiệp của chúng ta khác biệt?</h4>
+      <p class="first">Với các nhà lãnh đạo doanh nghiệp trên toàn cầu, câu hỏi này chưa bao giờ lỗi thời. Dù đó là một doanh nghiệp mới khởi nghiệp, một doanh nghiệp đang tăng trưởng hay một tập đoàn hàng đầu thế giới, các nhà lãnh đạo đều tự hỏi: Điều gì tạo cho chúng ta lợi thế? Tại sao khách hàng chọn chúng ta? Và điều gì giữ chúng ta ở phía trước cuộc đua?</p>
+      <p>Ngày nay, toàn cầu hoá không còn là một khát vọng, nó đã trở thành điều mặc định. Doanh nghiệp không còn biên giới. Chúng ta có thể làm việc ở bất cứ đâu, nhận thanh toán tức thì và cạnh tranh trên một sân chơi toàn cầu. Tiếp cận thị trường dễ dàng hơn bao giờ hết.</p>
+      <p>Nhưng mặt trái của vấn đề là cạnh tranh cũng trở thành điều mặc định. Thế giới giờ đây không còn phân chia thành những thị trường riêng biệt, mà trở thành một thị trường duy nhất. Mỗi nhân viên, mỗi doanh nghiệp đều phải cạnh tranh để tồn tại.</p>
+      <p>Vậy điều gì khiến doanh nghiệp của chúng ta thật sự khác biệt? Sản phẩm, dịch vụ, đội ngũ hay nguồn vốn? Tất cả đều quan trọng. Nhưng sự thật là sản phẩm sẽ thay đổi, con người có thể rời đi, vốn và mô hình kinh doanh cũng dịch chuyển. Mọi thứ đều có thể biến đổi.</p>
+      <p>Chỉ có một thứ định hình lợi thế bền vững: cách một doanh nghiệp sử dụng thời gian của mình. Hay nói cách khác, đó là <b>tốc độ thực thi</b>. Thời gian là nguồn lực hữu hạn duy nhất, và cũng là nguồn lực công bằng nhất cho tất cả doanh nghiệp. Ai cũng có thời gian như nhau.</p>
+      <p>Nếu doanh nghiệp thử nghiệm một mô hình sai, thất bại là tất yếu. Nhưng vấn đề lớn nhất là doanh nghiệp thất bại quá muộn, sau khi đã mất cơ hội và trả giá đắt. Nếu mô hình đúng, thách thức lại là đưa nó ra thị trường nhanh đến mức nào. Vì ở một nơi nào đó, luôn có một doanh nghiệp khác đang làm điều tương tự.</p>
+      <div class="pull">Chân lý đơn giản: tốc độ chính là lợi thế cạnh tranh trong thời đại mới, và "cá nhanh sẽ nuốt cá chậm".</div>
+      <p>Nhưng trong đa số doanh nghiệp, tốc độ thường hỗn loạn và thiếu kiểm soát. Câu hỏi quan trọng trở thành: làm thế nào để chúng ta hoàn thành công việc nhanh hơn, và có thể đo lường được nó?</p>
+
+      <h4>Khi con người gặp AI trong cuộc đua tốc độ</h4>
+      <p>Từ khi loài người chế tạo chiếc rìu đá đầu tiên cho đến thời điểm AI xuất hiện, lịch sử phát triển luôn gắn liền với việc con người tìm cách chuyển giao tri thức vào công cụ. Giờ đây, AI không chỉ là công cụ. AI đã trở thành một lực lượng lao động mới, có thể suy nghĩ, có thể hành động và có thể sáng tạo. Chúng ta đang sống trong một thế giới mà AI có thể làm một bản phân tích tài chính, tóm tắt một cuốn sách, vẽ một bức tranh, những việc vốn chỉ con người mới làm được, cùng lúc, trong vòng vài chục giây.</p>
+      <p>Trong hàng nghìn năm, loài người đã không ngừng sáng tạo. Chính sự sáng tạo ấy đã định hình thế giới mà chúng ta đang sống. Về bản chất, kinh doanh luôn là sản phẩm của quá trình ấy: chúng ta tạo ra giá trị, rồi tìm cách trao đổi giá trị đó.</p>
+      <p>Giờ đây, với một lực lượng lao động hoàn toàn mới và đầy sức mạnh, AI Workforce, chúng ta có thể tạo ra nhiều hơn bao giờ hết. Lần đầu tiên trong lịch sử, con người làm việc cùng những thực thể có khả năng thực hiện một phần công việc của mình. Chatbot chăm sóc khách hàng xử lý phần lớn các yêu cầu ban đầu. AI soạn bản nháp cho đội ngũ văn phòng. Công cụ sinh mã giải quyết những vấn đề trước đây cần đến các lập trình viên. Đó là một thực tế mà chúng ta buộc phải chấp nhận, và trong kinh doanh, điều này càng trở nên sống còn hơn bao giờ hết.</p>
+
+      <h4>Làm sao để doanh nghiệp ứng dụng AI nâng cao tốc độ thực thi</h4>
+      <p>Ngày nay, kết nối với một mô hình AI đơn giản chỉ bằng một dòng lệnh. Như lẽ tất yếu, cơn sốt AI khiến nhiều doanh nghiệp đưa AI Agents và Generative AI vào các ứng dụng quản lý, nhưng phần lớn chỉ dừng lại ở bề nổi, nhầm lẫn giữa trào lưu và sự chuyển đổi trọn vẹn.</p>
+      <p>Báo cáo của MIT cho thấy 95% dự án trợ lý AI trong doanh nghiệp chưa tạo ra giá trị đo được, đặt ra một câu hỏi lớn: AI có thể trình diễn rất ấn tượng, nhưng làm thế nào để thật sự đưa AI vào hệ thống vận hành sẵn có của một doanh nghiệp?</p>
+      <p>AI chỉ có thể phát huy giá trị khi được vận hành trên một kiến trúc doanh nghiệp đầy đủ. Muốn AI đọc một đơn hàng (PO) của khách và lập bảng định mức nguyên phụ liệu? Doanh nghiệp cần nghiệp vụ xử lý đơn hàng và định mức được chuẩn hoá. Muốn AI đọc hồ sơ nhân sự và tự soạn hợp đồng lao động? Doanh nghiệp cần nghiệp vụ hội nhập nhân sự mới rõ ràng. Muốn AI đánh giá hiệu suất? Doanh nghiệp cần dữ liệu kết quả công việc được ghi nhận ngay trong vận hành.</p>
+      <p>AI thất bại chủ yếu vì không được đặt đúng ngữ cảnh, hoặc không thể vận hành trên dữ liệu và quy tắc mà doanh nghiệp đang sử dụng hằng ngày.</p>
+      <p>Quan trọng hơn, cho dù AI có thể đọc dữ liệu và đưa ra câu trả lời chính xác tuyệt đối, câu hỏi đặt ra vẫn là: điều gì xảy ra tiếp theo? Nếu AI không được đặt vào trong hệ thống vận hành, AI sẽ không thể làm gì hơn một người trợ lý chăm chỉ giúp nhân viên tìm câu trả lời. Chỉ khi AI được đặt vào từng nghiệp vụ của doanh nghiệp, viễn cảnh con người và AI Agents cùng làm việc mới trở thành hiện thực.</p>
+
+      <h4>Hành trình tìm mô hình thống nhất: Vận hành, Phần mềm và AI</h4>
+      <p>Những điều vĩ đại luôn cần thời gian, nhưng chúng tôi chưa từng nghĩ hành trình này lại kéo dài đến vậy. Sau nhiều năm lao động miệt mài và không ngừng nỗ lực, chúng tôi đã xây dựng Base Agentic OS, nền tảng vận hành đặt ba lớp vào cùng một kiến trúc, tạo nên ngôn ngữ chung giữa phương pháp quản trị, phần mềm và kỷ nguyên AI.</p>
+      <div class="trio">
+        <div><b>Vận hành</b>Phương pháp luận quản trị: chuỗi giá trị, hoạt động chính, danh mục dịch vụ và quy tắc vận hành.</div>
+        <div><b>Phần mềm</b>Nền tảng số nơi mỗi dịch vụ có dữ liệu, người chịu trách nhiệm và kết quả đầu ra đo được.</div>
+        <div><b>AI</b>Lực lượng lao động số làm việc ngay trong từng dịch vụ, theo đúng quy tắc của doanh nghiệp.</div>
+      </div>
+      <p>Đơn vị nối ba lớp ấy là <b>dịch vụ</b>. Khi mỗi nghiệp vụ trở thành một dịch vụ có dữ liệu đầu vào, quy tắc vận hành, các bước thực hiện và kết quả đầu ra rõ ràng, con người, phần mềm và AI mới nói chung một ngôn ngữ. Chỉ khi đó, AI mới có thể nhận việc, làm việc và bàn giao kết quả như một thành viên thật sự của bộ máy.</p>
+      <div class="pull">Để AI vận hành hiệu quả, điều quan trọng không nằm ở việc đưa thêm công cụ AI vào sử dụng, mà ở việc quy hoạch lại hệ thống vận hành định hướng dịch vụ.</div>
+      <p>Đó cũng là lý do Base.vn đề xuất cùng Nagaco thực hiện dự án <b>Agentic Enterprise Transformation</b>, với hai cấu phần đi liền nhau: Quy hoạch hoạt động Quản trị và Vận hành định hướng dịch vụ, và Xây dựng, huấn luyện lực lượng lao động số.</p>
+
+      <h4>Lời kết: Kỷ nguyên vươn mình của doanh nghiệp Việt</h4>
+      <p>Đối với đội ngũ Base, dự án giữa Nagaco và Base không đơn thuần là một dự án công nghệ, triển khai một hệ thống công cụ và đào tạo người dùng. Đây là một cột mốc quan trọng trong hành trình thực hiện sứ mệnh và khát vọng của chúng tôi:</p>
+      <div class="mission">"Đưa Base trở thành bệ phóng kiến tạo cho thế hệ doanh nghiệp kiểu mới trong khát vọng vươn mình của dân tộc Việt Nam."</div>
+      <p>Chúng tôi kỳ vọng, với sự đồng hành của Base, Nagaco sẽ mở ra một kỷ nguyên mới của một mô hình vận hành mới, nơi CBCNV làm việc và cộng tác với AI Agents trên nền tảng số, hằng ngày. Từ đó, đưa tốc độ thực thi trở thành lợi thế cạnh tranh bền vững của Nagaco trên thị trường.</p>
+      <div class="beliefs">
+        <p>Chúng tôi thực sự tin rằng khởi nguồn của sự cải tiến sáng tạo, của những điều vĩ đại, bắt nguồn từ việc thách thức những chuẩn mực cũ.</p>
+        <p>Chúng tôi thực sự tin rằng đổi mới không nằm ở việc chạy theo xu hướng, mà ở việc coi điều gì là quan trọng.</p>
+        <p>Chúng tôi tin rằng AI không nên chỉ là một tiện ích bổ sung. AI phải được tích hợp sâu vào nhịp vận hành hằng ngày của doanh nghiệp. Chỉ khi AI trở thành "Daily AI", thiết thực và liền mạch, AI mới có thể thúc đẩy năng suất thực sự, nâng cao khả năng ra quyết định và tạo ra giá trị bền vững.</p>
+      </div>
+      <div class="pull">Bởi vì chúng tôi tin rằng AI không chỉ nên "có mặt", mà còn phải trở nên không thể thay thế.</div>
+      <p>Lời cuối cùng, chúng tôi xin trân trọng cảm ơn Ban lãnh đạo Nagaco đã dành thời gian cùng Base.vn. Chúc Nagaco luôn thành công và tăng trưởng vượt bậc.</p>
+      <div class="sign"><img src="assets/team/nghia.jpg" alt=""><div>Trân trọng,<b>Trần Tuấn Anh Nghĩa</b><span>Phó Tổng giám đốc · Công ty Cổ phần Base Enterprise</span></div></div>
+    </article>
+
+</section>
+
+<section class="ch" id="noi-dung">
+  <div class="chead"><div class="n">B</div><div><small>Nội dung dự án</small><h2>Agentic Enterprise Transformation tại Nagaco</h2></div></div>
+  <p class="lead2">Agentic Enterprise là doanh nghiệp vận hành bằng hai đơn vị cơ bản: <b>Dịch vụ</b> định nghĩa công việc, <b>Nhân sự số</b> cùng con người thực hiện công việc. Dự án gồm hai hạng mục đi theo đúng thứ tự đó: làm rõ dịch vụ trước, đưa AI vào sau.</p>
+
+  <!-- ================= 2.1 ================= -->
+  <div class="hm" id="h21"><div class="k">1</div><div><small>Hạng mục 1 · Services-Oriented Operations</small><h3>Quy hoạch hoạt động Quản trị và Vận hành định hướng dịch vụ</h3></div></div>
+  <p>Phần mềm tổ chức theo tính năng khiến AI không hiểu nghiệp vụ. Khi công việc được tổ chức thành dịch vụ, đối tượng, dữ liệu, quy tắc, công cụ và kỹ năng của một nghiệp vụ nằm cùng một chỗ. Hạng mục 1 gồm bốn nội dung: (1.1) Dịch vụ là ngôn ngữ chung; (1.2) Phương pháp luận 04 tầng triển khai; (1.3) Xây dựng từng dịch vụ nhất quán và có chiều sâu; (1.4) Kết quả đầu ra của dịch vụ.</p>
+
+  <h4 class="sec" id="h21a"><span class="k">1.1</span>Dịch vụ là ngôn ngữ chung của con người, phần mềm và AI</h4>
+  <p>Với doanh nghiệp, dịch vụ là nghiệp vụ con người làm mỗi ngày. Với phần mềm, dịch vụ là đơn vị cấu tạo nên hệ thống. Với AI, dịch vụ là nơi chứa đủ ngữ cảnh và tri thức để làm việc đúng. Dịch vụ nằm ở giao điểm của cả ba.</p>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 1</span><b>Dịch vụ ở giao điểm của doanh nghiệp, phần mềm và AI</b></div>
+      <div class="venn">
+        <svg viewBox="0 0 460 440" role="img" aria-label="Dịch vụ nằm ở vùng giao thoa của ba vòng tròn">
+          <defs><filter id="sh" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0b3d91" flood-opacity=".25"/></filter>
+            <radialGradient id="vg1" cx="35%" cy="35%"><stop offset="0" stop-color="#1e6fd9" stop-opacity=".22"/><stop offset="1" stop-color="#1e6fd9" stop-opacity=".1"/></radialGradient>
+            <radialGradient id="vg2" cx="65%" cy="35%"><stop offset="0" stop-color="#0f9b6c" stop-opacity=".22"/><stop offset="1" stop-color="#0f9b6c" stop-opacity=".1"/></radialGradient>
+            <radialGradient id="vg3" cx="50%" cy="70%"><stop offset="0" stop-color="#6d3fd6" stop-opacity=".22"/><stop offset="1" stop-color="#6d3fd6" stop-opacity=".1"/></radialGradient></defs>
+          <circle class="rv" style="--d:.05s" cx="160" cy="170" r="135" fill="url(#vg1)" stroke="#1e6fd9" stroke-opacity=".55" stroke-width="1.5"/>
+          <circle class="rv" style="--d:.2s" cx="300" cy="170" r="135" fill="url(#vg2)" stroke="#0f9b6c" stroke-opacity=".55" stroke-width="1.5"/>
+          <circle class="rv" style="--d:.35s" cx="230" cy="285" r="135" fill="url(#vg3)" stroke="#6d3fd6" stroke-opacity=".55" stroke-width="1.5"/>
+          <g class="rv" style="--d:.5s" text-anchor="middle">
+            <text x="104" y="120" font-size="16" font-weight="700" fill="var(--b)">Doanh nghiệp</text>
+            <text x="104" y="140" font-size="11.5" fill="var(--muted)">Nghiệp vụ con người</text>
+            <text x="104" y="155" font-size="11.5" fill="var(--muted)">làm mỗi ngày</text>
+            <text x="356" y="120" font-size="16" font-weight="700" fill="var(--ok)">Phần mềm</text>
+            <text x="356" y="140" font-size="11.5" fill="var(--muted)">Đơn vị cấu tạo</text>
+            <text x="356" y="155" font-size="11.5" fill="var(--muted)">nên hệ thống</text>
+            <text x="230" y="362" font-size="16" font-weight="700" fill="var(--ai)">AI Agents</text>
+            <text x="230" y="381" font-size="11.5" fill="var(--muted)">Hộp ngữ cảnh để làm việc</text>
+          </g>
+          <circle class="vpulse" cx="230" cy="210" r="44" fill="none" stroke="var(--b)" stroke-width="2"/>
+          <g class="rv sc" style="--d:.7s;transform-origin:230px 210px">
+            <circle cx="230" cy="210" r="44" fill="var(--card)" stroke="var(--cardline)" filter="url(#sh)"/>
+            <text x="230" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">DỊCH VỤ</text>
+            <text x="230" y="225" text-anchor="middle" font-size="9" letter-spacing="1.5" fill="var(--muted)">SERVICE</text>
+          </g>
+        </svg>
+        <div class="vnotes">
+          <div class="c rv" style="--d:.5s;--k:var(--b)"><span class="d"><svg class="ic"><use href="#i-build"/></svg></span><div><b>Với doanh nghiệp</b>Dịch vụ là đơn vị vận hành, có người chịu trách nhiệm và kết quả rõ ràng.</div></div>
+          <div class="c rv" style="--d:.62s;--k:var(--ok)"><span class="d"><svg class="ic"><use href="#i-data"/></svg></span><div><b>Với phần mềm</b>Dữ liệu, quy tắc, công cụ và kỹ năng của một nghiệp vụ nằm cùng một chỗ.</div></div>
+          <div class="c rv" style="--d:.74s;--k:var(--ai)"><span class="d"><svg class="ic"><use href="#i-bot"/></svg></span><div><b>Với AI</b>AI đi vào dịch vụ thì biết dữ liệu nào cần đọc, quy tắc nào phải theo, kết quả nào phải bàn giao.</div></div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <p>Dịch vụ không đứng yên. Mỗi lần vận hành, dịch vụ tạo ra kết quả; kết quả được đánh giá và đúc kết thành tri thức; tri thức quay lại cập nhật quy tắc, tài liệu và kỹ năng, giúp dịch vụ tốt hơn ở vòng sau. Đây là cơ chế giúp Nagaco tích luỹ tri thức vận hành thay vì để tri thức nằm trong kinh nghiệm của từng người.</p>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 2</span><b>Vòng lặp cải tiến của một dịch vụ</b></div>
+      <div class="loopw">
+        <svg viewBox="0 0 400 380" role="img" aria-label="Vòng lặp: nghiệp vụ, kết quả, tri thức">
+          <circle cx="200" cy="190" r="130" fill="none" stroke="var(--cardline)" stroke-width="10"/>
+          <circle cx="200" cy="190" r="130" fill="none" stroke="url(#lg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="60 757" id="lsweep">
+            <animateTransform attributeName="transform" type="rotate" from="-90 200 190" to="270 200 190" dur="6s" repeatCount="indefinite"/>
+          </circle>
+          <defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#1e6fd9" stop-opacity="0"/><stop offset="1" stop-color="#1e6fd9"/></linearGradient></defs>
+          <g fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".7">
+            <g transform="translate(312.6,125) rotate(60)"><path d="M-5,-6 L4,0 L-5,6"/></g>
+            <g transform="translate(200,320) rotate(180)"><path d="M-5,-6 L4,0 L-5,6"/></g>
+            <g transform="translate(87.4,125) rotate(300)"><path d="M-5,-6 L4,0 L-5,6"/></g>
+          </g>
+          <g class="lnode" id="ln0"><circle cx="200" cy="60" r="32" fill="var(--card)" stroke="#1e6fd9" stroke-width="2.5"/><text x="200" y="66" text-anchor="middle" font-size="17" font-weight="700" fill="#1e6fd9">1</text></g>
+          <g class="lnode" id="ln1"><circle cx="312.6" cy="255" r="32" fill="var(--card)" stroke="#0f9b6c" stroke-width="2.5"/><text x="312.6" y="261" text-anchor="middle" font-size="17" font-weight="700" fill="#0f9b6c">2</text></g>
+          <g class="lnode" id="ln2"><circle cx="87.4" cy="255" r="32" fill="var(--card)" stroke="#6d3fd6" stroke-width="2.5"/><text x="87.4" y="261" text-anchor="middle" font-size="17" font-weight="700" fill="#6d3fd6">3</text></g>
+          <text x="262" y="56" font-size="14" font-weight="700" fill="var(--ink)">Nghiệp vụ</text>
+          <text x="312.6" y="306" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Kết quả</text>
+          <text x="87.4" y="306" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Tri thức</text>
+          <text x="200" y="184" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">Dịch vụ</text>
+          <text x="200" y="204" text-anchor="middle" font-size="12" fill="var(--muted)">tốt hơn sau mỗi vòng</text>
+        </svg>
+        <div class="lsteps" id="lsteps">
+          <div class="c lstep on" style="--k:#1e6fd9"><span class="n">1</span><div><b>Nghiệp vụ được thực hiện</b><span>Con người và AI xử lý công việc theo dữ liệu, quy tắc và các bước của dịch vụ.</span></div></div>
+          <div class="c lstep" style="--k:#0f9b6c"><span class="n">2</span><div><b>Kết quả được ghi nhận</b><span>Mỗi việc hoàn thành để lại bản ghi kết quả, kèm đánh giá đúng hạn, đúng quy định.</span></div></div>
+          <div class="c lstep" style="--k:#6d3fd6"><span class="n">3</span><div><b>Tri thức được đúc kết</b><span>Tình huống mới, ngoại lệ và cách xử lý hay được cập nhật vào quy tắc, tài liệu và kỹ năng.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <h4 class="sec" id="h21b"><span class="k">1.2</span>Phương pháp luận 04 tầng triển khai</h4>
+  <p>Dự án đi từ tổng thể tới chi tiết: hiểu cách Nagaco tạo ra giá trị, nhóm các hoạt động chính, xây dựng danh mục dịch vụ, rồi mới đưa AI vào từng dịch vụ. Bấm vào từng tầng để xem nội dung.</p>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 3</span><b>Mô hình 04 tầng</b></div>
+      <div class="layers">
+        <div class="iso rv" aria-hidden="true">
+          <div class="pl p1" data-l="1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="pl p2" data-l="2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="pl p3" data-l="3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="pl p4" data-l="4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="lvl" id="lvl">
+          <button class="rv" style="--d:.1s;--k:var(--ai)" data-l="4"><small>TẦNG 04</small><div><b>AI Agent trong từng dịch vụ</b><em>AI Agents in Services</em><span>Bóc tách việc trong dịch vụ, xác định phần việc giao cho AI và đưa AI vào dịch vụ.</span></div></button>
+          <button class="rv" style="--d:.2s;--k:var(--ok)" data-l="3"><small>TẦNG 03</small><div><b>Danh mục dịch vụ</b><em>Company's Services</em><span>Xây dựng từng dịch vụ: định nghĩa, dữ liệu, phân quyền, quy tắc vận hành, kết quả đầu ra.</span></div></button>
+          <button class="rv" style="--d:.3s;--k:var(--b)" data-l="2"><small>TẦNG 02</small><div><b>Hoạt động chính</b><em>Company's Main Activities</em><span>Nhóm hoạt động chính và hỗ trợ theo chức năng, đánh giá mức ảnh hưởng tới chuỗi giá trị.</span></div></button>
+          <button class="rv" style="--d:.4s;--k:var(--bd)" data-l="1"><small>TẦNG 01</small><div><b>Chuỗi giá trị</b><em>Company's Value Chain</em><span>Cách Nagaco tạo ra giá trị: từ phát triển khách hàng, ký PO, cung ứng, sản xuất tới xuất hàng, thanh toán.</span></div></button>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <h5 class="ss"><span class="k">1.2.1</span>Tầng 01 và 02: Nhìn toàn bộ Nagaco qua chuỗi giá trị</h5>
+  <p>Mỗi hoạt động chính và hoạt động hỗ trợ được bóc tách thành các dịch vụ cụ thể. Với Nagaco, chuỗi giá trị gồm năm khối vận hành chính của hoạt động sản xuất may và các khối hỗ trợ.</p>
+  <figure class="mk">
+    <div class="stage vc2">
+      <div class="fh"><span class="fn">Hình 4</span><b>Chuỗi giá trị và các dịch vụ tiêu biểu của Nagaco</b><span class="bd">Minh hoạ</span></div>
+      <div class="blk"><i></i>Các khối vận hành chính</div>
+      <div class="core"><div class="cb rv" style="--d:0.10s"><div class="cbh"><em>01</em><b>Phát triển khách hàng, báo giá và ký PO</b></div><p>Tìm khách hàng, báo giá, đàm phán và ký đơn hàng (PO).</p><div class="svs"><span>Theo dõi báo giá</span><span>Lập báo giá đơn hàng</span><span>Rà soát, ký PO</span></div><span class="gate"><svg class="ic"><use href="#i-flag"/></svg>Ký PO</span></div><div class="cb rv" style="--d:0.22s"><div class="cbh"><em>02</em><b>Chuẩn bị sản xuất</b></div><p>May mẫu, duyệt mẫu với khách hàng, định mức nguyên phụ liệu, kế hoạch đơn hàng.</p><div class="svs"><span>Duyệt mẫu với khách hàng</span><span>Định mức nguyên phụ liệu</span><span>Kế hoạch đơn hàng</span></div><span class="gate"><svg class="ic"><use href="#i-flag"/></svg>Duyệt mẫu</span></div><div class="cb rv" style="--d:0.34s"><div class="cbh"><em>03</em><b>Cung ứng nguyên phụ liệu</b></div><p>Mua sắm vải, phụ liệu, bao bì; quản lý gia công ngoài.</p><div class="svs"><span>Đề nghị cấp vật tư</span><span>Đánh giá nhà cung cấp</span><span>Đặt mua vải, phụ liệu</span><span>Quản lý gia công ngoài</span></div><span class="gate"><svg class="ic"><use href="#i-flag"/></svg>Đủ nguyên phụ liệu</span></div><div class="cb rv" style="--d:0.46s"><div class="cbh"><em>04</em><b>Sản xuất</b></div><p>Cắt, may, hoàn thiện sản phẩm tại các nhà máy thành viên.</p><div class="svs"><span>Nhật ký sản xuất</span><span>Báo cáo tiến độ</span><span>Kiểm tra chất lượng</span></div><span class="gate"><svg class="ic"><use href="#i-flag"/></svg>Hoàn thành sản xuất</span></div><div class="cb rv" style="--d:0.58s"><div class="cbh"><em>05</em><b>QC, xuất hàng và thanh toán</b></div><p>Kiểm hàng cuối, đóng gói, giao hàng, chứng từ xuất khẩu và thanh toán.</p><div class="svs"><span>Kiểm hàng cuối</span><span>Chứng từ xuất khẩu</span><span>Thanh toán đơn hàng</span><span>Xử lý khiếu nại hàng</span></div><span class="gate"><svg class="ic"><use href="#i-flag"/></svg>Giao hàng</span></div></div>
+      <div class="axis rv" style="--d:.7s">
+        <div class="ax-line"><span class="ax-dot"></span></div>
+        <div class="ax-lb"><div><i>01</i><b>Trước đơn hàng</b><span>Tìm khách hàng, báo giá, ký PO</span></div><div><i>02</i><b>Triển khai đơn hàng</b><span>Chuẩn bị, cung ứng, sản xuất theo kế hoạch</span></div><div><i>03</i><b>Sau đơn hàng</b><span>Kiểm hàng, xuất hàng, thanh toán</span></div></div>
+      </div>
+      <div class="blk"><i class="s"></i>Các khối hỗ trợ</div>
+      <div class="sup"><div class="sb rv" style="--d:0.20s"><div class="sbh"><span class="ico"><svg class="ic"><use href="#i-cash"/></svg></span><em>SUP-01</em><b>Tài chính, kế toán</b></div><p>Thanh toán, hoàn ứng</p><p>Chứng từ xuất khẩu, công nợ</p></div><div class="sb rv" style="--d:0.28s"><div class="sbh"><span class="ico"><svg class="ic"><use href="#i-users"/></svg></span><em>SUP-02</em><b>Hành chính, nhân sự</b></div><p>Tuyển dụng, đào tạo</p><p>Văn bản đến, đi, giao ban điều hành</p></div><div class="sb rv" style="--d:0.36s"><div class="sbh"><span class="ico"><svg class="ic"><use href="#i-shield"/></svg></span><em>SUP-03</em><b>Kỹ thuật, bảo trì, tuân thủ</b></div><p>Bảo trì bảo dưỡng</p><p>Tuân thủ audit (WRAP, SMETA, Higg, ZDHC)</p></div><div class="sb rv" style="--d:0.44s"><div class="sbh"><span class="ico"><svg class="ic"><use href="#i-chart"/></svg></span><em>SUP-04</em><b>Kế hoạch, nghiên cứu phát triển</b></div><p>Kế hoạch sản xuất kinh doanh</p><p>Nghiên cứu &amp; phát triển, báo cáo quản trị</p></div></div>
+    </div>
+    <p class="muted" style="font-size:14px;margin:10px 0 0">Mỗi nhãn là một dịch vụ. Chuỗi giá trị được rà soát và hoàn thiện cùng các phòng ban của Nagaco trong giai đoạn khảo sát.</p>
+  </figure>
+
+  <h5 class="ss"><span class="k">1.2.2</span>Tầng 03: Mỗi vị trí công việc là một danh mục dịch vụ</h5>
+  <p>Mô tả công việc chỉ cho biết ai giữ vai trò. Danh mục dịch vụ cho biết vị trí đó thực sự cung cấp những gì cho tổ chức, đầu vào và đầu ra của từng việc, và phần nào có thể giao cho AI. Ví dụ với vị trí Chuyên viên Mua sắm:</p>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 5</span><b>Từ mô tả công việc đến danh mục dịch vụ</b><span class="bd">Minh hoạ</span></div>
+      <div class="jd">
+        <div class="c jdcard rv"><span class="lab"><span class="bx"><svg class="ic"><use href="#i-user"/></svg></span>Mô tả công việc</span><h6>Chuyên viên Mua sắm</h6><span class="muted" style="font-size:13px">Bộ phận vật tư, mua sắm</span>
+          <div class="bl"><small>MỤC ĐÍCH VỊ TRÍ</small><span class="sk" style="width:92%"></span><span class="sk" style="width:70%"></span></div>
+          <div class="bl"><small>TRÁCH NHIỆM CHÍNH</small><span class="sk" style="width:86%"></span><span class="sk" style="width:94%"></span><span class="sk" style="width:62%"></span></div>
+          <div class="bl"><small>YÊU CẦU NĂNG LỰC</small><span class="sk" style="width:76%"></span></div>
+        </div>
+        <svg class="jdlinks rv" style="--d:.2s" viewBox="0 0 90 700" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 350 C45 350 45 50 90 50"/><path d="M0 350 C45 350 45 150 90 150"/><path d="M0 350 C45 350 45 250 90 250"/><path d="M0 350 C45 350 45 350 90 350"/><path d="M0 350 C45 350 45 450 90 450"/><path d="M0 350 C45 350 45 550 90 550"/><path d="M0 350 C45 350 45 650 90 650"/>
+        </svg>
+        <div class="svlist">
+          <div class="c sv rv" style="--d:0.30s"><span class="ico"><svg class="ic"><use href="#i-box"/></svg></span><div><b>Tiếp nhận, tổng hợp đề nghị cấp vật tư</b><span>Tổng hợp đề nghị từ các nhà máy, kho · Requests</span></div><em>DV 01</em></div><div class="c sv rv" style="--d:0.38s"><span class="ico"><svg class="ic"><use href="#i-users"/></svg></span><div><b>Đánh giá, lựa chọn nhà cung cấp</b><span>Hồ sơ năng lực, tiêu chí chọn, danh sách đạt · Workflow, Dataset</span></div><em>DV 02</em></div><div class="c sv rv" style="--d:0.46s"><span class="ico"><svg class="ic"><use href="#i-scale"/></svg></span><div><b>So sánh báo giá, đề xuất mua hàng</b><span>Đối chiếu báo giá, trình phương án mua · BPM</span></div><em>DV 03</em></div><div class="c sv rv" style="--d:0.54s"><span class="ico"><svg class="ic"><use href="#i-doc"/></svg></span><div><b>Soạn thảo, rà soát và ký hợp đồng mua bán</b><span>Hợp đồng theo mẫu, trình ký số · Workflow, eSign</span></div><em>DV 04</em></div><div class="c sv rv" style="--d:0.62s"><span class="ico"><svg class="ic"><use href="#i-cal"/></svg></span><div><b>Theo dõi giao hàng, nhập kho nhà máy</b><span>Tiến độ giao, phiếu nhập kho · Inventories</span></div><em>DV 05</em></div><div class="c sv rv" style="--d:0.70s"><span class="ico"><svg class="ic"><use href="#i-cash"/></svg></span><div><b>Đề nghị thanh toán nhà cung cấp</b><span>Lập đề nghị, chuyển Tài chính kế toán · Requests</span></div><em>DV 06</em></div><div class="c sv rv" style="--d:0.78s"><span class="ico"><svg class="ic"><use href="#i-chart"/></svg></span><div><b>Đánh giá định kỳ nhà cung cấp</b><span>Chất lượng, tiến độ, giá theo kỳ · Dataset, Output</span></div><em>DV 07</em></div>
+        </div>
+      </div>
+      <div class="insight rv" style="--d:.8s"><span class="pill p-ok">Góc nhìn mới</span>Một vị trí thực chất là một danh mục dịch vụ đang cung cấp cho tổ chức.</div>
+    </div>
+  </figure>
+
+  <h4 class="sec" id="h21c"><span class="k">1.3</span>Mỗi một Dịch vụ được xây dựng nhất quán và có chiều sâu</h4>
+  <p>Một dịch vụ chỉ có tên và quy trình là dịch vụ "mỏng": người vẫn phải tự nhớ cách làm, AI không có ngữ cảnh, lãnh đạo không đo được kết quả. Dự án xây dựng mọi dịch vụ của Nagaco theo cùng một chuẩn, đủ các thành phần để cả người và AI làm việc được.</p>
+
+  <h5 class="ss"><span class="k">1.3.1</span>Xây dựng và Quy hoạch một dịch vụ</h5>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 6</span><b>Dịch vụ Đề nghị cấp vật tư</b><span class="bd">Minh hoạ</span></div>
+      <div class="svc">
+        <div class="c s-ru rv" style="--d:.15s"><span class="lab"><span class="bx"><svg class="ic"><use href="#i-rule"/></svg></span>Quy tắc</span><ul><li>Định mức nguyên phụ liệu theo mã hàng</li><li>Hạn mức thẩm quyền duyệt mua sắm</li><li>Danh sách nhà cung cấp đã đánh giá</li></ul></div>
+        <div class="c s-ap rv" style="--d:.25s"><span class="lab"><span class="bx"><svg class="ic"><use href="#i-flag"/></svg></span>Con người phê duyệt</span><ul><li>Đề nghị vượt định mức mã hàng</li><li>Mua từ nhà cung cấp ngoài danh sách</li><li>Phụ liệu khẩn ngoài kế hoạch</li></ul></div>
+        <div class="c s-da rv" style="--d:.35s"><span class="lab"><span class="bx"><svg class="ic"><use href="#i-data"/></svg></span>Dữ liệu</span><ul><li>Định mức theo mã hàng, PO</li><li>Tồn kho nhà máy, kho</li><li>Danh mục nhà cung cấp</li></ul></div>
+        <div class="c s-in rv" style="--d:.45s"><span class="lab"><span class="bx"><svg class="ic"><use href="#i-doc"/></svg></span>Đầu vào</span><ul><li>Đề nghị của nhà máy, kho</li><li>Kế hoạch sản xuất tuần, tháng</li><li>Báo giá nhà cung cấp</li></ul></div>
+        <div class="s-core rv sc"><small>DỊCH VỤ · CÁCH THỰC HIỆN</small><h6>Đề nghị cấp vật tư</h6>
+          <div class="steps" id="steps"><div class="fill"></div><span><i>1</i>Tiếp nhận đề nghị</span><span><i>2</i>Đối chiếu định mức</span><span><i>3</i>Kiểm tra tồn kho</span><span><i>4</i>Chọn nguồn cấp</span><span><i>5</i>Duyệt, cấp phát</span></div>
+        </div>
+        <div class="c s-out rv" style="--d:.55s"><span class="lab"><span class="bx"><svg class="ic"><use href="#i-check"/></svg></span>Đầu ra</span><ul><li>Phiếu cấp vật tư đã duyệt</li><li>Đơn mua hàng gửi nhà cung cấp</li><li>Tồn kho được cập nhật</li></ul><div class="rec" id="rec"><svg class="ic"><use href="#i-check"/></svg>Đã ghi nhận kết quả đầu ra</div></div>
+        <div class="s-own rv" style="--d:.65s">
+          <span class="who" style="--k:var(--bd)"><i>VT</i>Chủ sở hữu: Trưởng bộ phận vật tư</span>
+          <span class="who" style="--k:var(--b)"><i>MS</i>Vận hành: Chuyên viên Mua sắm</span>
+          <span class="who" style="--k:var(--cy)"><i>NM</i>Theo dõi: Quản lý nhà máy</span>
+          <span class="who" style="--k:var(--ai)"><i>AI</i>AI Agent mua sắm</span>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <h5 class="ss"><span class="k">1.3.2</span>Các thành phần của một dịch vụ</h5>
+  <p>Mỗi dịch vụ trên nền tảng Base được xây dựng đủ chín thành phần dưới đây. Đây là chuẩn chung để mọi phòng ban của Nagaco thiết kế dịch vụ giống nhau, và là "hợp đồng" mà AI Agent phải tuân theo khi làm việc trong dịch vụ.</p>
+  <div class="tw"><table class="tbl" style="min-width:680px">
+    <thead><tr><th style="width:26%">Thành phần</th><th style="width:40%">Định nghĩa</th><th>Ví dụ trong dịch vụ Đề nghị cấp vật tư</th></tr></thead>
+    <tbody>
+      <tr><td>1. Tổng quan dịch vụ</td><td>Mục đích, phạm vi, đầu vào và đầu ra chính; người chủ sở hữu, người vận hành và người theo dõi.</td><td>Cấp đủ, đúng vật tư cho nhà máy theo kế hoạch sản xuất; chủ sở hữu là Trưởng bộ phận vật tư.</td></tr>
+      <tr><td>2. Dữ liệu và biểu mẫu</td><td>Các trường thông tin bắt buộc, ràng buộc và dữ liệu tham chiếu mà dịch vụ cần đọc.</td><td>Mã hàng, danh mục nguyên phụ liệu, số lượng, ngày cần, tồn kho hiện tại.</td></tr>
+      <tr><td>3. Quy tắc vận hành<span class="s">Workrules</span></td><td>Quy chế, định mức, thẩm quyền và ngoại lệ được viết thành quy tắc thi hành được, áp dụng cho cả người và AI.</td><td>Đề nghị vượt định mức nguyên phụ liệu của mã hàng tự chuyển lên cấp duyệt cao hơn.</td></tr>
+      <tr><td>4. Cách thực hiện</td><td>Các bước xử lý, người hoặc AI phụ trách từng bước, thời hạn xử lý của mỗi bước.</td><td>Năm bước từ tiếp nhận đề nghị tới duyệt và cấp phát.</td></tr>
+      <tr><td>5. Phân quyền</td><td>Ai được tạo, ai được xem, ai được duyệt; AI Agent được đọc và ghi dữ liệu nào.</td><td>Nhà máy tạo đề nghị, Chuyên viên Mua sắm xử lý, lãnh đạo có thẩm quyền duyệt khi vượt hạn mức.</td></tr>
+      <tr><td>6. AI và công cụ</td><td>Trợ lý AI và AI Agent gắn vào dịch vụ, cùng các thao tác được phép trên phần mềm.</td><td>AI đối chiếu định mức theo mã hàng, kiểm tra tồn kho, gợi ý nhà cung cấp vải, phụ liệu phù hợp.</td></tr>
+      <tr><td>7. Tự động hoá và kết nối</td><td>Nhắc hạn, chuyển bước, đồng bộ dữ liệu với các ứng dụng và phần mềm khác.</td><td>Tạo phiếu xuất, nhập kho nguyên phụ liệu trên Inventories; đồng bộ sang phần mềm kế toán.</td></tr>
+      <tr><td>8. Kết quả đầu ra</td><td>Thế nào được tính là một việc hoàn thành; kết quả được ghi nhận và đánh giá ra sao.</td><td>Một phiếu cấp vật tư được duyệt và giao đúng hạn.</td></tr>
+      <tr><td>9. Nhật ký và kiểm soát</td><td>Vết kiểm tra cho mọi thao tác của người và AI trong dịch vụ.</td><td>Ai kiểm tra, ai duyệt, vào thời điểm nào.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h5 class="ss"><span class="k">1.3.3</span>Dịch vụ càng đầy đủ ngữ cảnh, AI Agents càng phát huy năng lực</h5>
+  <p>Mỗi dịch vụ được đánh giá theo mức độ đầy đủ của dữ liệu, mức phán đoán cần có và rủi ro khi sai. Dịch vụ đủ ngữ cảnh, rủi ro thấp có thể giao cho AI dẫn dắt; dịch vụ cần phán đoán và rủi ro cao vẫn do con người dẫn dắt. Ví dụ với danh mục dịch vụ mua sắm:</p>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 7</span><b>Mức sẵn sàng cho AI của các dịch vụ mua sắm</b><span class="bd">Minh hoạ</span></div>
+      <div class="tw"><table class="rtable" style="min-width:700px">
+        <thead><tr><th>Dịch vụ</th><th>Độ đầy đủ ngữ cảnh</th><th>Phán đoán</th><th>Rủi ro</th><th>Cách thực hiện</th></tr></thead>
+        <tbody>
+          <tr class="rv" style="--d:.05s"><td>Tổng hợp đề nghị cấp vật tư</td><td><span class="meter" data-v="5"><i></i><i></i><i></i><i></i><i></i></span></td><td><span class="dt g">Thấp</span></td><td><span class="dt g">Thấp</span></td><td><span class="pill p-ai">AI dẫn dắt</span></td></tr>
+          <tr class="rv" style="--d:.15s"><td>So sánh báo giá nhà cung cấp</td><td><span class="meter" data-v="5"><i></i><i></i><i></i><i></i><i></i></span></td><td><span class="dt g">Thấp</span></td><td><span class="dt g">Thấp</span></td><td><span class="pill p-ai">AI dẫn dắt</span></td></tr>
+          <tr class="rv" style="--d:.25s"><td>Theo dõi giao hàng, nhập kho</td><td><span class="meter" data-v="4"><i></i><i></i><i></i><i></i><i></i></span></td><td><span class="dt g">Thấp</span></td><td><span class="dt y">Trung bình</span></td><td><span class="pill p-ai">AI dẫn dắt</span></td></tr>
+          <tr class="rv" style="--d:.35s"><td>Đánh giá, lựa chọn nhà cung cấp</td><td><span class="meter" data-v="3"><i></i><i></i><i></i><i></i><i></i></span></td><td><span class="dt y">Trung bình</span></td><td><span class="dt y">Trung bình</span></td><td><span class="pill p-hx">Người và AI</span></td></tr>
+          <tr class="rv" style="--d:.45s"><td>Đàm phán, ký hợp đồng mua bán</td><td><span class="meter" data-v="1"><i></i><i></i><i></i><i></i><i></i></span></td><td><span class="dt r">Cao</span></td><td><span class="dt r">Cao</span></td><td><span class="pill p-hu">Con người dẫn dắt</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </figure>
+
+  <h4 class="sec" id="h21d"><span class="k">1.4</span>Kết quả đầu ra của dịch vụ</h4>
+  <p>Kết quả đầu ra là lớp quyết định giá trị của một dịch vụ. Với mỗi dịch vụ, hai bên thống nhất ba điều:</p>
+  <div class="tw"><table class="tbl" style="min-width:600px">
+    <thead><tr><th style="width:28%">Khái niệm</th><th>Ý nghĩa</th></tr></thead>
+    <tbody>
+      <tr><td>Đơn vị đầu ra</td><td>Thế nào được tính là một việc hoàn thành. Ví dụ: một phiếu cấp vật tư được duyệt, một bộ báo giá được so sánh xong.</td></tr>
+      <tr><td>Bản ghi đầu ra</td><td>Mỗi khi việc hoàn tất, hệ thống tự ghi lại: kết quả gì, ai thực hiện (người hay AI Agent), từ hồ sơ nào, vào thời điểm nào.</td></tr>
+      <tr><td>Chỉ số chất lượng</td><td>Kết quả có đúng hạn, đúng quy định, có phải làm lại hay không. Mỗi chỉ số có mục tiêu và chu kỳ đánh giá.</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 8</span><b>Chuỗi đo kết quả từ vị trí tới kế hoạch nhân lực</b><span class="bd">Dữ liệu minh hoạ</span></div>
+      <div class="outg">
+        <div class="chain" id="chain">
+          <div class="c lnk rv" style="--d:.05s"><span class="n">1</span><div><b>Vị trí</b><span>Ai giữ việc: con người hay AI Agent</span></div></div>
+          <div class="c lnk rv" style="--d:.15s"><span class="n">2</span><div><b>Kết quả đầu ra</b><span>Vị trí đó bàn giao được những gì</span></div></div>
+          <div class="c lnk rv" style="--d:.25s"><span class="n">3</span><div><b>Chỉ số chất lượng</b><span>Đúng hạn, đúng quy định, ít làm lại</span></div></div>
+          <div class="c lnk rv" style="--d:.35s"><span class="n">4</span><div><b>Đánh giá hiệu suất</b><span>Dựa trên kết quả thật ghi nhận trên hệ thống</span></div></div>
+          <div class="c lnk rv" style="--d:.45s"><span class="n">5</span><div><b>Kế hoạch nhân lực</b><span>Cần thêm người hay thêm AI Agent</span></div></div>
+        </div>
+        <div class="c feed rv" style="--d:.3s">
+          <h6>Kết quả đầu ra · Bộ phận vật tư, mua sắm</h6>
+          <div class="sub2">Ghi nhận tự động khi công việc hoàn tất</div>
+          <ul id="feed">
+            <li><span class="av ai">AI</span><div>Tổng hợp 14 đề nghị cấp vật tư tuần 41<small>Tiếp nhận đề nghị cấp vật tư</small></div><span class="pill p-ok">Đúng hạn</span></li>
+            <li><span class="av">MS</span><div>Chốt phương án mua vải thân cho đơn hàng xuất khẩu<small>So sánh báo giá, đề xuất mua hàng</small></div><span class="pill p-ok">Đúng hạn</span></li>
+            <li><span class="av ai">AI</span><div>Cập nhật tiến độ giao cúc áo lô 3<small>Theo dõi giao hàng, nhập kho</small></div><span class="pill p-ok">Đúng hạn</span></li>
+          </ul>
+          <div class="kpi"><div><b>Đúng hạn</b>Việc hoàn thành đúng thời hạn<div class="bar"><i style="--w:88%"></i></div></div><div><b>Đúng quy định</b>Không phải làm lại<div class="bar"><i style="--w:93%"></i></div></div></div>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div class="call"><div class="i">✓</div><p><b>Lãnh đạo nhìn thấy năng suất thật.</b> Khi kết quả được ghi nhận ngay trong dịch vụ, Ban lãnh đạo biết mỗi vị trí, mỗi phòng ban và mỗi AI Agent đã bàn giao bao nhiêu kết quả, chất lượng ra sao, theo tuần và theo tháng. Con người và AI được đo bằng cùng một thước đo.</p></div>
+
+  <div class="deliv" id="kq21">
+    <div class="dh"><span class="i"><svg class="ic"><use href="#i-check"/></svg></span><div><small>Hạng mục 1</small><h4>Kết quả bàn giao của Hạng mục 1</h4></div></div>
+    <ul>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Báo cáo hiện trạng hệ thống</b><span>Tình hình sử dụng các ứng dụng Base.vn, dữ liệu, quy trình, thời gian xử lý và các điểm nghẽn hiện tại.</span></div><em>Tài liệu</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Bản đồ chuỗi giá trị và hoạt động chính</b><span>Tầng 01 và 02 của phương pháp luận, được xác nhận cùng các phòng ban.</span></div><em>Tài liệu</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Danh mục dịch vụ khối văn phòng</b><span>Danh mục dịch vụ theo từng phòng ban và vị trí, kèm danh sách dịch vụ ưu tiên được Ban lãnh đạo duyệt.</span></div><em>Tài liệu</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Các dịch vụ ưu tiên được dựng trên nền tảng Base</b><span>Mỗi dịch vụ đủ chín thành phần, từ dữ liệu, quy tắc, cách thực hiện tới phân quyền và kết quả đầu ra.</span></div><em>Trên hệ thống</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Bộ quy tắc vận hành</b><span>Quy chế, định mức, thẩm quyền của Nagaco được viết thành quy tắc và gắn vào từng dịch vụ.</span></div><em>Trên hệ thống</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Mô hình kết quả đầu ra</b><span>Đơn vị đầu ra, chỉ số chất lượng và bảng theo dõi kết quả cho các dịch vụ ưu tiên.</span></div><em>Trên hệ thống</em></li>
+    </ul>
+  </div>
+
+  <!-- ================= 2.2 ================= -->
+  <div class="ai-c">
+  <div class="hm ai" id="h22"><div class="k">2</div><div><small>Hạng mục 2 · Digital AI Worker</small><h3>Xây dựng và Huấn luyện Lực lượng Lao động số tại Nagaco</h3></div></div>
+  <p>Khi dịch vụ đã đủ ngữ cảnh, bước tiếp theo là xây dựng đội ngũ nhân sự số tham gia vận hành các dịch vụ đó. Hạng mục 2 gồm bốn nội dung: (2.1) AI Agent là gì; (2.2) Ba cấp nhân sự số; (2.3) Tuyển và đào tạo một AI Agent; (2.4) Đưa AI Agent vào vận hành.</p>
+
+  <h4 class="sec" id="h22a"><span class="k">2.1</span>AI Agent là gì</h4>
+  <div class="def"><p><b>AI Agent</b> là một hệ thống sử dụng mô hình AI để tự lập kế hoạch, sử dụng công cụ và thực hiện các bước cần thiết nhằm hoàn thành một mục tiêu được giao, trong giới hạn quyền hạn và quy tắc mà doanh nghiệp đặt ra.</p></div>
+  <p>Điểm khác biệt của AI Agent nằm ở chỗ nhận việc và hoàn thành việc. Một chatbot chỉ trả lời câu hỏi, con người vẫn phải tự làm phần còn lại. Một trợ lý Copilot gợi ý và soạn thảo, con người vẫn là người thao tác. Một luồng tự động hoá chạy đúng kịch bản cố định, gặp tình huống ngoài kịch bản là dừng. AI Agent nhận một mục tiêu, tự chia thành các bước, dùng công cụ để thực hiện, kiểm tra kết quả và bàn giao lại cho con người ở những điểm cần duyệt.</p>
+  <div class="cmp">
+    <div><small>Mức 1</small><b>Chatbot hỏi đáp</b>Trả lời câu hỏi dựa trên tài liệu có sẵn. Con người tự làm phần việc còn lại.<div class="ex">Hỏi quy định về công tác phí</div></div>
+    <div><small>Mức 2</small><b>Trợ lý Copilot</b>Gợi ý, soạn thảo ngay trong phần mềm. Con người thao tác và quyết định.<div class="ex">Soạn nháp công văn trả lời nhà cung cấp</div></div>
+    <div><small>Mức 3</small><b>Tự động hoá quy trình</b>Chạy theo kịch bản cố định. Không xử lý được tình huống ngoài kịch bản.<div class="ex">Nhắc hạn nộp báo cáo định kỳ</div></div>
+    <div class="hl"><small>Mức 4</small><b>AI Agent</b>Nhận mục tiêu, tự lập kế hoạch, dùng công cụ, bàn giao kết quả. Con người duyệt các điểm quan trọng.<div class="ex">So sánh ba báo giá, đối chiếu định mức và đề xuất nhà cung cấp</div></div>
+  </div>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 9</span><b>Cấu tạo và vòng làm việc của một AI Agent</b></div>
+      <div class="agent">
+        <div class="agcol l">
+          <div class="c cap rv" style="--d:.2s;--k:var(--b)"><span class="d"><svg class="ic"><use href="#i-book"/></svg></span><div><b>Tri thức</b><span>Quy chế, tài liệu, sổ tay nghiệp vụ</span></div></div>
+          <div class="c cap rv" style="--d:.3s;--k:var(--cy)"><span class="d"><svg class="ic"><use href="#i-bolt"/></svg></span><div><b>Kỹ năng</b><span>Cách làm từng việc theo các bước chuẩn</span></div></div>
+        </div>
+        <div class="rv sc">
+          <div class="orb">
+            <svg viewBox="0 0 280 280" aria-hidden="true">
+              <circle cx="140" cy="140" r="118" fill="none" stroke="color-mix(in srgb,var(--ai) 8%,transparent)" stroke-width="30"/>
+              <path class="seg" id="sg0" d="M150.3,22.4 A118,118 0 0,1 257.6,129.7"/>
+              <path class="seg" id="sg1" d="M257.6,150.3 A118,118 0 0,1 150.3,257.6"/>
+              <path class="seg" id="sg2" d="M129.7,257.6 A118,118 0 0,1 22.4,150.3"/>
+              <path class="seg" id="sg3" d="M22.4,129.7 A118,118 0 0,1 129.7,22.4"/>
+              <g font-size="11" font-weight="700" text-anchor="middle">
+                <circle cx="223.4" cy="56.6" r="12" fill="var(--card)" stroke="var(--ai)"/><text x="223.4" y="60.5" fill="var(--ai)">1</text>
+                <circle cx="223.4" cy="223.4" r="12" fill="var(--card)" stroke="var(--ai)"/><text x="223.4" y="227.4" fill="var(--ai)">2</text>
+                <circle cx="56.6" cy="223.4" r="12" fill="var(--card)" stroke="var(--ai)"/><text x="56.6" y="227.4" fill="var(--ai)">3</text>
+                <circle cx="56.6" cy="56.6" r="12" fill="var(--card)" stroke="var(--ai)"/><text x="56.6" y="60.5" fill="var(--ai)">4</text>
+              </g>
+            </svg>
+            <div class="center"><div><svg class="ic"><use href="#i-bot"/></svg><b>AI AGENT</b><small id="agphase">Tiếp nhận mục tiêu</small></div></div>
+          </div>
+        </div>
+        <div class="agcol r">
+          <div class="c cap rv" style="--d:.4s;--k:var(--wn)"><span class="d"><svg class="ic"><use href="#i-tool"/></svg></span><div><b>Công cụ</b><span>Thao tác được phép trên phần mềm</span></div></div>
+          <div class="c cap rv" style="--d:.5s;--k:var(--ai)"><span class="d"><svg class="ic"><use href="#i-shield"/></svg></span><div><b>Quy tắc</b><span>Giới hạn, thẩm quyền, điểm cần người duyệt</span></div></div>
+        </div>
+      </div>
+      <div class="mdl rv" style="--d:.6s"><b>Vòng làm việc:</b> 1 Tiếp nhận mục tiêu · 2 Lập kế hoạch · 3 Thực thi bằng công cụ · 4 Kiểm tra và bàn giao kết quả<br>Nền tảng: mô hình AI phù hợp độ khó và chi phí của từng việc</div>
+    </div>
+  </figure>
+  <div class="call w"><div class="i"><svg class="ic"><use href="#i-info"/></svg></div><p><b>Vì sao cần làm đúng cách.</b> Theo Gartner (06/2025), hơn 40% dự án Agentic AI có thể bị huỷ trước cuối năm 2027 do chi phí tăng cao, giá trị kinh doanh không rõ ràng hoặc kiểm soát rủi ro chưa đủ. Cũng theo Gartner, đến năm 2028 ít nhất 15% quyết định công việc hằng ngày sẽ do AI Agent thực hiện một cách tự chủ. Vì vậy, AI Agent tại Nagaco phải được đặt vào đúng dịch vụ, tuân theo đúng quy tắc và được đo bằng kết quả đầu ra.</p></div>
+
+  <h4 class="sec" id="h22b"><span class="k">2.2</span>Ba cấp nhân sự số</h4>
+  <p>AI Agent được xây dựng theo ba cấp, tăng dần theo độ phức tạp của việc, số công cụ cần kết nối và độ sâu tri thức. Giai đoạn đầu ưu tiên cấp Assistant và Executive cho các dịch vụ có nhiều việc lặp lại, rủi ro thấp và đo được hiệu quả.</p>
+  <div class="lvls">
+    <div class="lv"><small>Cấp 1</small><b>Assistant</b><div class="bars"><i class="f"></i><i></i><i></i></div><p>Giải đáp, tra cứu, soạn thảo theo tri thức có sẵn.</p><div class="ex">Giải đáp quy chế mua sắm, định mức vật tư cho các nhà máy</div></div>
+    <div class="lv"><small>Cấp 2</small><b>Executive</b><div class="bars"><i class="f"></i><i class="f"></i><i></i></div><p>Thực thi một bước trong dịch vụ và trả kết quả có cấu trúc.</p><div class="ex">Tổng hợp đề nghị cấp vật tư, so sánh báo giá, rà soát điều khoản hợp đồng theo mẫu</div></div>
+    <div class="lv"><small>Cấp 3</small><b>Expert</b><div class="bars"><i class="f"></i><i class="f"></i><i class="f"></i></div><p>Xử lý nghiệp vụ phức tạp, kết nối nhiều hệ thống.</p><div class="ex">Điều phối cung ứng cho nhiều nhà máy thành viên, kết nối kho, mua sắm và kế toán</div></div>
+  </div>
+
+  <h4 class="sec" id="h22c"><span class="k">2.3</span>Tuyển và đào tạo một AI Agent như một nhân viên mới</h4>
+  <p>Xây dựng một AI Agent đi qua đúng các bước như tuyển một nhân viên: lập hồ sơ vị trí, đào tạo nghiệp vụ, kiểm tra trước khi giao việc thật, rồi mới vận hành chính thức và đánh giá theo kết quả. AI Agent không được chạy thật khi chưa qua bước kiểm tra tuân thủ quy tắc.</p>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 10</span><b>Hồ sơ và lộ trình hội nhập của một nhân sự số</b><span class="bd">Minh hoạ</span></div>
+      <div class="onb">
+        <div class="prof rv">
+          <div class="cv"></div>
+          <div class="av"><svg class="ic"><use href="#i-bot"/></svg></div>
+          <div class="nm"><b>Trợ lý Cung ứng vật tư</b><small>Nhân sự số · Cấp Executive</small></div>
+          <dl>
+            <div><dt>Phòng ban</dt><dd>Vật tư, mua sắm</dd></div>
+            <div><dt>Quản lý trực tiếp</dt><dd>Trưởng bộ phận vật tư</dd></div>
+            <div><dt>Dịch vụ phụ trách</dt><dd>Cung ứng vật tư</dd></div>
+            <div><dt>Mô hình AI</dt><dd>Theo độ khó của việc</dd></div>
+          </dl>
+          <div class="stt"><span id="obst">Sẵn sàng nhận việc</span><div class="pg"><i id="obpg"></i></div></div>
+        </div>
+        <div class="tl" id="tl">
+          <div class="stg done rv" style="--d:.1s;--k:var(--b)"><span class="dot">1</span><div class="c bx2"><b>Hồ sơ vị trí</b><small>Ai, ở đâu, làm gì</small><ul><li class="ok"><i>✓</i>Chức danh, phòng ban</li><li class="ok"><i>✓</i>Mô tả công việc</li><li class="ok"><i>✓</i>Phạm vi quyền hạn</li></ul></div></div>
+          <div class="stg done rv" style="--d:.2s;--k:var(--ai)"><span class="dot">2</span><div class="c bx2"><b>Đào tạo nghiệp vụ</b><small>Tri thức, kỹ năng, công cụ</small><ul><li class="ok"><i>✓</i>Nạp quy chế mua sắm</li><li class="ok"><i>✓</i>Kỹ năng so sánh báo giá</li><li class="ok"><i>✓</i>Kết nối công cụ làm việc</li></ul></div></div>
+          <div class="stg done rv" style="--d:.3s;--k:var(--wn)"><span class="dot">3</span><div class="c bx2"><b>Kiểm tra trước vận hành</b><small>Như thời gian thử việc</small><ul><li class="ok"><i>✓</i>Chạy thử trên hồ sơ mẫu</li><li class="ok"><i>✓</i>Kiểm tra tuân thủ quy tắc</li><li class="ok"><i>✓</i>Người phụ trách xác nhận</li></ul></div></div>
+          <div class="stg done rv" style="--d:.4s;--k:var(--ok)"><span class="dot">4</span><div class="c bx2"><b>Vận hành chính thức</b><small>Nhận việc và được đánh giá</small><ul><li class="ok"><i>✓</i>Nhận việc trong dịch vụ</li><li class="ok"><i>✓</i>Ghi nhớ cách làm</li><li class="ok"><i>✓</i>Đánh giá theo kết quả</li></ul></div></div>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <p>Một AI Agent làm tốt khi có đủ bảy thành phần. Thiếu một thành phần, AI Agent hoặc trả lời chung chung, hoặc làm sai quy định của doanh nghiệp.</p>
+  <div class="tw"><table class="tbl" style="min-width:680px">
+    <thead><tr><th style="width:24%">Thành phần</th><th style="width:30%">Trả lời câu hỏi</th><th>Nội dung xây dựng cho Nagaco</th></tr></thead>
+    <tbody>
+      <tr><td>1. Mô hình AI<span class="s">Model</span></td><td>AI Agent suy luận bằng "bộ não" nào</td><td>Chọn mô hình phù hợp với độ khó và chi phí của từng việc.</td></tr>
+      <tr><td>2. Hồ sơ vị trí<span class="s">Agents.md</span></td><td>AI Agent là ai, làm gì, giới hạn đến đâu</td><td>Chức danh, mô tả công việc, việc được làm và không được làm, chuyển việc cho ai.</td></tr>
+      <tr><td>3. Tri thức<span class="s">Knowledge</span></td><td>AI Agent biết gì về nghiệp vụ</td><td>Quy chế, tài liệu, biểu mẫu, ví dụ chuẩn và lịch sử xử lý của Nagaco.</td></tr>
+      <tr><td>4. Kỹ năng<span class="s">Skills</span></td><td>AI Agent làm việc theo cách nào</td><td>Các bước làm từng việc cụ thể và mẫu kết quả chuẩn.</td></tr>
+      <tr><td>5. Công cụ<span class="s">Tools</span></td><td>AI Agent được thao tác vào đâu</td><td>Quyền tạo việc, cập nhật trạng thái, đọc dữ liệu trên Base và phần mềm khác.</td></tr>
+      <tr><td>6. Ngữ cảnh<span class="s">Context</span></td><td>AI Agent đang làm việc trong bối cảnh nào</td><td>Dịch vụ đã xây ở Hạng mục 1: dữ liệu, bản ghi và kết quả đầu ra của đúng nghiệp vụ.</td></tr>
+      <tr><td>7. Quy tắc<span class="s">Workrules</span></td><td>AI Agent phải tuân theo luật nào</td><td>Quy định của Nagaco viết thành luật thi hành được. Đây là điểm khác biệt của Base so với các công cụ AI đứng riêng.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4 class="sec" id="h22d"><span class="k">2.4</span>Đưa AI Agent vào vận hành</h4>
+  <h5 class="ss"><span class="k">2.4.1</span>Bóc tách việc trong từng dịch vụ, đưa AI vào đúng chỗ</h5>
+  <p>Không phải việc nào cũng giao cho AI. Mỗi dịch vụ được bóc tách theo hai tiêu chí: mức độ biến động của công việc và độ phức tạp của việc ra quyết định.</p>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 11</span><b>Ma trận phân công giữa con người và AI Agent</b><span class="bd">Minh hoạ</span></div>
+      <div class="mtx">
+        <div class="ya"><span>Mức độ biến động</span></div>
+        <div class="qd q-hx rv" style="--d:.1s"><div class="qh"><div><small>Biến động nhiều · Đơn giản</small><b>Con người và AI cùng làm</b></div><span class="pill p-hx">Người + AI</span></div><div class="its"><span>Dự thảo thư mời chào giá nhà cung cấp</span><span>Soạn văn bản nhắc giao hàng trễ hạn</span></div><span class="big">2</span></div>
+        <div class="qd q-hu rv" style="--d:.2s"><div class="qh"><div><small>Biến động nhiều · Phức tạp</small><b>Con người quyết định</b></div><span class="pill p-hu">Con người</span></div><div class="its"><span>Đàm phán điều khoản hợp đồng</span><span>Xử lý tranh chấp, khiếu nại</span><span>Phê duyệt đơn mua giá trị lớn</span></div><span class="big">4</span></div>
+        <div class="qd q-ai rv" style="--d:.3s"><div class="qh"><div><small>Ít biến động · Đơn giản</small><b>Giao cho AI Agent</b></div><span class="pill p-ai">AI Agent</span></div><div class="its"><span>Tổng hợp đề nghị cấp vật tư</span><span>So sánh báo giá theo tiêu chí</span><span>Theo dõi tiến độ giao hàng</span></div><span class="big">1</span></div>
+        <div class="qd q-hx2 rv" style="--d:.4s"><div class="qh"><div><small>Ít biến động · Phức tạp</small><b>AI chuẩn bị, con người duyệt</b></div><span class="pill p-hx">Người + AI</span></div><div class="its"><span>Đánh giá định kỳ nhà cung cấp</span><span>Rà soát hợp đồng mua bán theo mẫu</span></div><span class="big">3</span></div>
+        <div class="xa"><span>Độ phức tạp</span></div>
+      </div>
+    </div>
+  </figure>
+
+  <h5 class="ss"><span class="k">2.4.2</span>AI không chỉ trả lời, AI nhận việc</h5>
+  <p>Mỗi AI Agent có hàng đợi công việc riêng như một nhân viên: việc do người giao, việc chạy theo lịch, việc phát sinh từ dịch vụ. Mỗi việc có hạn, có trạng thái, và khi bị chặn thì báo lại người giao.</p>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 12</span><b>Hàng đợi công việc của một AI Agent trên Base AgentHub</b><span class="bd">Dữ liệu minh hoạ</span></div>
+      <div class="app rv">
+        <div class="tb"><img src="assets/logo/base-logo-white.png" alt="Base.vn">AgentHub<span class="sr">Tìm kiếm...</span></div>
+        <div class="body">
+          <div class="side">
+            <div class="who"><i>VT</i><div><b>Trợ lý Cung ứng vật tư</b><small>Bộ phận vật tư, mua sắm</small></div></div>
+            <h6>Vận hành</h6><span class="it on">Công việc <em>5</em></span><span class="it">Phê duyệt <em>2</em></span><span class="it">Lịch chạy <em>3</em></span>
+            <h6>Tri thức</h6><span class="it">Quy tắc <em>9</em></span><span class="it">Tài liệu <em>24</em></span><span class="it">Kỹ năng <em>6</em></span>
+          </div>
+          <div class="main">
+            <h6>Công việc<span>+ Giao việc</span></h6>
+            <div id="tasks">
+              <div class="task"><span class="cb"></span><div><b>Tổng hợp đề nghị cấp vật tư tuần 41</b><small>Chạy vào 16:00 thứ Sáu hằng tuần</small></div><span class="src">Trình kích hoạt</span><span class="stt2 st-doing">Đang làm</span></div>
+              <div class="task"><span class="cb"></span><div><b>So sánh báo giá vải thân cho nhà máy</b><small>Thiếu một báo giá, đã nhắc nhà cung cấp</small></div><span class="src">Từ dịch vụ</span><span class="stt2 st-todo">Cần làm</span></div>
+              <div class="task"><span class="cb"></span><div><b>Nhắc nhà cung cấp giao cúc áo lô 3</b><small>Đã xác nhận lịch giao mới</small></div><span class="src">Hằng tháng</span><span class="stt2 st-done">Hoàn tất</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <h5 class="ss"><span class="k">2.4.3</span>Ba nguyên tắc quản trị nhân sự số</h5>
+  <div class="princ">
+    <div><i><svg class="ic"><use href="#i-person"/></svg></i><b>Con người giữ thẩm quyền</b>AI Agent chuẩn bị, kiểm tra và đề xuất. Các quyết định quan trọng luôn có người duyệt.</div>
+    <div><i><svg class="ic"><use href="#i-eye"/></svg></i><b>Mọi thao tác đều có nhật ký</b>Ai giao việc, AI đã làm gì, dựa trên dữ liệu nào, đều được ghi lại để kiểm tra.</div>
+    <div><i><svg class="ic"><use href="#i-chart"/></svg></i><b>Đo bằng kết quả đầu ra</b>AI Agent giữ một vị trí và được đánh giá bằng cùng thước đo với nhân sự.</div>
+  </div>
+  <figure class="mk">
+    <div class="stage">
+      <div class="fh"><span class="fn">Hình 13</span><b>AI làm phần việc lặp lại, con người giữ thẩm quyền</b></div>
+      <div class="ha">
+        <div class="hd muted">Nghiệp vụ</div><div class="hd" style="color:var(--ai)">Việc của AI Agent</div><div class="hd" style="color:var(--b)">Việc của con người</div>
+        <div class="c ar rv" style="--d:.05s">Văn thư, điều hành văn bản<span>E-Office · Request · E-Sign</span></div><div class="x1 rv" style="--d:.1s"><svg class="ic"><use href="#i-bot"/></svg>Tóm tắt công văn, đề xuất người trình, đọc bút phê thành việc, đề xuất hồ sơ lưu</div><div class="x2 rv" style="--d:.15s"><svg class="ic"><use href="#i-person"/></svg>Bút phê, phê duyệt, ký số ban hành</div>
+        <div class="c ar rv" style="--d:.2s">Mua sắm, vật tư<span>Requests · BPM · Inventories</span></div><div class="x1 rv" style="--d:.25s"><svg class="ic"><use href="#i-bot"/></svg>Tổng hợp đề nghị, so sánh báo giá, theo dõi giao hàng và tồn kho</div><div class="x2 rv" style="--d:.3s"><svg class="ic"><use href="#i-person"/></svg>Chọn nhà cung cấp, duyệt đơn mua, xử lý ngoại lệ</div>
+        <div class="c ar rv" style="--d:.35s">Pháp chế, hợp đồng<span>Workflow · E-Sign</span></div><div class="x1 rv" style="--d:.4s"><svg class="ic"><use href="#i-bot"/></svg>Rà soát điều khoản theo mẫu chuẩn, nhắc hạn hiệu lực hợp đồng</div><div class="x2 rv" style="--d:.45s"><svg class="ic"><use href="#i-person"/></svg>Đàm phán, quyết định điều khoản, ký kết</div>
+        <div class="c ar rv" style="--d:.5s">Họp và điều hành<span>Meeting · Task Inbox</span></div><div class="x1 rv" style="--d:.55s"><svg class="ic"><use href="#i-bot"/></svg>Ghi biên bản, tách kết luận thành việc có người nhận, có hạn</div><div class="x2 rv" style="--d:.6s"><svg class="ic"><use href="#i-person"/></svg>Chủ trì, kết luận, xác nhận biên bản</div>
+      </div>
+    </div>
+  </figure>
+
+  <div class="deliv" id="kq22">
+    <div class="dh"><span class="i"><svg class="ic"><use href="#i-check"/></svg></span><div><small>Hạng mục 2</small><h4>Kết quả bàn giao của Hạng mục 2</h4></div></div>
+    <ul>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Danh sách phần việc giao cho AI trong từng dịch vụ ưu tiên</b><span>Phân công theo ma trận người và AI, được Nagaco xác nhận.</span></div><em>Tài liệu</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>AI Agent thí điểm được xây dựng đủ bảy thành phần</b><span>Gắn vào dịch vụ, đã qua kiểm tra tuân thủ quy tắc trước khi vận hành thật.</span></div><em>Trên hệ thống</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Kho tri thức và bộ kỹ năng nghiệp vụ</b><span>Quy chế, tài liệu, biểu mẫu của Nagaco được chuẩn hoá để AI đọc nhanh, đọc đúng.</span></div><em>Trên hệ thống</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Bảng theo dõi kết quả của AI Agent</b><span>Số việc hoàn thành, chất lượng, theo từng vị trí và từng dịch vụ, dành cho Ban lãnh đạo.</span></div><em>Trên hệ thống</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Đào tạo CBCNV làm việc cùng AI Agent</b><span>Cách giao việc, phối hợp, giám sát và duyệt kết quả của AI.</span></div><em>Đào tạo</em></li>
+      <li><span class="cb"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Hướng dẫn vận hành và mở rộng</b><span>Quy trình bổ sung tri thức, kỹ năng và mở rộng AI Agent sang dịch vụ mới.</span></div><em>Tài liệu</em></li>
+    </ul>
+  </div>
+  </div>
+</section>
+
+<!-- ================= 04 ================= -->
+<section class="ch" id="lo-trinh">
+  <div class="chead"><div class="n">C</div><div><small>Lộ trình</small><h2>Lộ trình tổng quan Quý IV/2026</h2></div></div>
+  <p class="lead2">Bốn giai đoạn nối tiếp, có phần gối đầu để rút ngắn thời gian. Kết quả của giai đoạn đầu là nền tảng để hai bên lập kế hoạch mở rộng cho các năm tiếp theo.</p>
+  <div class="rm">
+    <div class="rp" style="--c:#1e6fd9"><div class="rh"><span class="no">GĐ1</span><b>Khởi động và khảo sát hiện trạng</b></div><p>Hai bên thống nhất kế hoạch triển khai, AI rà soát hệ thống Base.vn đang sử dụng và làm việc với các phòng ban để hiểu rõ hiện trạng vận hành của Nagaco.</p><div class="rc"><div><small>Công việc chính</small><ul><li>Họp khởi động dự án</li><li>AI rà soát hệ thống và dữ liệu</li><li>Làm việc với các phòng ban</li></ul></div><div class="ot"><small>Cần đạt được</small><p>Báo cáo hiện trạng hệ thống: ứng dụng đang dùng, dữ liệu, quy trình và các điểm nghẽn.</p></div></div></div>
+    <div class="rp" style="--c:#0f9b6c"><div class="rh"><span class="no">GĐ2</span><b>Quy hoạch danh mục dịch vụ</b></div><p>Nhìn toàn bộ Nagaco qua chuỗi giá trị, nhóm các hoạt động chính, rồi bóc tách thành danh mục dịch vụ theo từng phòng ban và vị trí.</p><div class="rc"><div><small>Công việc chính</small><ul><li>Chuỗi giá trị và hoạt động chính</li><li>Danh mục dịch vụ khối văn phòng</li><li>Chọn dịch vụ ưu tiên</li></ul></div><div class="ot"><small>Cần đạt được</small><p>Bản đồ chuỗi giá trị và danh mục dịch vụ được Ban lãnh đạo duyệt, kèm danh sách dịch vụ ưu tiên.</p></div></div></div>
+    <div class="rp" style="--c:#6d3fd6"><div class="rh"><span class="no">GĐ3</span><b>Xây dựng dịch vụ và AI Agent thí điểm</b></div><p>Dựng các dịch vụ ưu tiên trên nền tảng Base đủ chín thành phần, chuẩn hoá dữ liệu và tri thức, sau đó xây dựng và huấn luyện AI Agent đặt vào đúng dịch vụ.</p><div class="rc"><div><small>Công việc chính</small><ul><li>Dựng dịch vụ, chuẩn hoá dữ liệu</li><li>Xây dựng và huấn luyện AI Agent</li><li>Kiểm tra tuân thủ quy tắc trước khi vận hành</li></ul></div><div class="ot"><small>Cần đạt được</small><p>Dịch vụ ưu tiên và AI Agent thí điểm sẵn sàng vận hành, đã qua kiểm tra.</p></div></div></div>
+    <div class="rp" style="--c:#d47a0a"><div class="rh"><span class="no">GĐ4</span><b>Vận hành, đo kết quả và chuyển giao</b></div><p>Đưa dịch vụ và AI Agent vào vận hành thật, đo kết quả đầu ra của người và AI, đào tạo CBCNV và chuyển giao năng lực để Nagaco tự mở rộng.</p><div class="rc"><div><small>Công việc chính</small><ul><li>Vận hành thật, đo kết quả đầu ra</li><li>Đào tạo CBCNV và chuyển giao</li><li>Tổng kết Quý IV</li></ul></div><div class="ot"><small>Cần đạt được</small><p>Báo cáo kết quả, bộ hướng dẫn vận hành và kế hoạch mở rộng năm 2027.</p></div></div></div>
+  </div>
+</section>
+</main>
+</div>
+<footer>Công ty Cổ phần Base Enterprise × Công ty Cổ phần May Nam Định (Nagaco) · Tháng 10/2026</footer>
+<style>
+.lnode{transform-box:fill-box;transform-origin:center}
+.lnode.on{transform:scale(1.14)}
+.lnode.on circle{stroke-width:6}
+
+
+
+
+
+
+
+.task .src{margin:0;padding:0;border:0;background:none}
+
+
+
+
+
+
+
+
+
+
+
+.pill.p-wn{background:var(--wns);color:var(--wn)}
+.pt{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.02em}
+.pt.hi{background:color-mix(in srgb,var(--rd) 14%,transparent);color:var(--rd)}
+.pt.md{background:var(--wns);color:var(--wn)}
+.rm{display:flex;flex-direction:column;gap:14px;margin:16px 0 8px}
+.rp{position:relative;padding:20px 22px 20px 26px;border-radius:16px;background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.rp::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
+.rp .rh{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.rp .no{font-size:11.5px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent);padding:3px 8px;border-radius:7px}
+.rp .rh b{font-size:17px;line-height:1.3}
+.rp .dtt{margin-left:auto;font-size:13px;color:var(--muted)}
+.rp>p{margin:10px 0 14px;font-size:15px;color:var(--muted);line-height:1.6}
+.rp .rc{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rp .rc>div{padding:14px 16px;border-radius:12px;background:var(--soft)}
+.rp .rc small{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c);margin-bottom:6px}
+.rp .rc ul{margin:0;padding-left:18px;font-size:14.5px;line-height:1.6}
+.rp .rc .ot p{margin:0;font-size:14.5px;line-height:1.6}
+@media (max-width:640px){.rp .rc{grid-template-columns:1fr}.rp .dtt{margin-left:0}}
+</style>
+<script>
+(function(){
+var root=document.documentElement;
+try{var t=localStorage.getItem('nagaco-theme');if(t)root.setAttribute('data-theme',t)}catch(e){}
+document.getElementById('themeBtn').addEventListener('click',function(){
+  var cur=root.getAttribute('data-theme');
+  if(!cur){cur=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+  var nx=cur==='dark'?'light':'dark';root.setAttribute('data-theme',nx);
+  try{localStorage.setItem('nagaco-theme',nx)}catch(e){}
+});
+var toc=document.getElementById('toc');
+/* thu gọn, mở rộng mục lục */
+var tgl=document.getElementById('tocTgl');
+function setMin(m){root.classList.toggle('toc-min',m);var t=m?'Mở rộng mục lục':'Thu gọn mục lục';tgl.setAttribute('data-tip',t);tgl.setAttribute('aria-label',t);try{localStorage.setItem('nagaco-toc-min',m?'1':'0')}catch(e){}}
+try{if(localStorage.getItem('nagaco-toc-min')==='1')setMin(true)}catch(e){}
+tgl.addEventListener('click',function(){setMin(!root.classList.contains('toc-min'))});
+
+document.getElementById('menuBtn').addEventListener('click',function(){toc.classList.toggle('open')});
+toc.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toc.classList.remove('open')})});
+
+/* tiến độ đọc và mục lục đang xem */
+var prog=document.getElementById('prog');
+var links=[].slice.call(toc.querySelectorAll('a'));
+var targets=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function onScroll(){
+  var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight);
+  prog.style.width=(Math.max(0,Math.min(1,p))*100)+'%';
+  var idx=0;for(var i=0;i<targets.length;i++){if(targets[i]&&targets[i].getBoundingClientRect().top<140)idx=i}
+  links.forEach(function(a,i){a.classList.toggle('on',i===idx)});var par=-1;if(links[idx]&&links[idx].classList.contains('l3')){for(var j=idx-1;j>=0;j--){if(!links[j].classList.contains('l3')){par=j;break}}}links.forEach(function(a,i){a.classList.toggle('pon',i===par)});
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* hiện dần khi cuộn tới */
+var figs=[].slice.call(document.querySelectorAll('figure.mk'));
+figs.forEach(function(f){f.classList.add('pre')});
+var vis=new Set();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){e.target.classList.remove('pre');vis.add(e.target)}else{vis.delete(e.target)}
+})},{threshold:.18});
+figs.forEach(function(f){io.observe(f)});
+function visible(el){var f=el&&el.closest('figure');return !f||vis.has(f)}
+
+/* 04 tầng */
+var lvl=document.getElementById('lvl'),cur=4,hold=0;
+function setL(l){cur=l;
+  document.querySelectorAll('.iso .pl').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l)});
+  lvl.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',+b.dataset.l===l)});
+}
+lvl.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){setL(+b.dataset.l);hold=Date.now()+9000})});
+setL(1);cur=1;
+setInterval(function(){if(Date.now()<hold||!visible(lvl))return;setL(cur%4+1)},2600);
+
+/* vòng lặp cải tiến */
+var ln=[0,1,2].map(function(i){return document.getElementById('ln'+i)});
+var lst=[].slice.call(document.querySelectorAll('#lsteps .lstep'));var li=0;
+function setLoop(i){ln.forEach(function(n,k){n.classList.toggle('on',k===i)});lst.forEach(function(s,k){s.classList.toggle('on',k===i)})}
+setLoop(0);setInterval(function(){if(!visible(lst[0]))return;li=(li+1)%3;setLoop(li)},2000);
+
+/* các bước của dịch vụ */
+var st=document.getElementById('steps'),sp=[].slice.call(st.querySelectorAll('span')),fill=st.querySelector('.fill'),rec=document.getElementById('rec'),si=-1;
+setInterval(function(){if(!visible(st))return;si=(si+1)%7;var k=Math.min(si,4);
+  if(si===6){si=-1;sp.forEach(function(s){s.classList.remove('on')});fill.style.width='0';rec.classList.remove('on');return}
+  sp.forEach(function(s,j){s.classList.toggle('on',j<=k)});fill.style.width=(k/4*80)+'%';rec.classList.toggle('on',si>=4);
+},1100);
+
+/* chuỗi đo kết quả và luồng kết quả */
+var lk=[].slice.call(document.querySelectorAll('#chain .lnk')),ci=0;
+setInterval(function(){if(!visible(lk[0]))return;lk.forEach(function(l,j){l.classList.toggle('on',j===ci)});ci=(ci+1)%lk.length},1600);
+var feed=document.getElementById('feed'),FD=[
+ ['AI','Gợi ý ba nhà cung cấp đạt chuẩn cho vải lót','Đánh giá, lựa chọn nhà cung cấp','ok','Đúng hạn'],
+ ['MS','Ký hợp đồng mua chỉ may cho đơn hàng xuất khẩu','Hợp đồng mua bán','ok','Đúng hạn'],
+ ['AI','Phát hiện đề nghị vượt định mức vải của mã hàng','Tiếp nhận đề nghị cấp vật tư','wn','Cần duyệt'],
+ ['MS','Nhập kho 12.000 m vải thân tại kho nhà máy','Theo dõi giao hàng, nhập kho','ok','Đúng hạn'],
+ ['AI','Lập đề nghị thanh toán đợt 2 cho nhà cung cấp vải','Đề nghị thanh toán nhà cung cấp','ok','Đúng hạn']],fi=0;
+setInterval(function(){if(!visible(feed))return;var d=FD[fi++%FD.length];var el=document.createElement('li');
+  el.innerHTML='<span class="av'+(d[0]==='AI'?' ai':'')+'">'+d[0]+'</span><div>'+d[1]+'<small>'+d[2]+'</small></div><span class="pill p-'+d[3]+'">'+d[4]+'</span>';
+  feed.insertBefore(el,feed.firstChild);while(feed.children.length>3)feed.removeChild(feed.lastChild)},3200);
+
+/* AI Agent: bốn pha làm việc */
+var seg=[0,1,2,3].map(function(i){return document.getElementById('sg'+i)}),agp=document.getElementById('agphase'),
+ PH=['Tiếp nhận mục tiêu','Lập kế hoạch','Thực thi bằng công cụ','Kiểm tra và bàn giao'],ai=0;
+var lbs=[].slice.call(document.querySelectorAll('.orb .lb'));
+function setA(i){seg.forEach(function(s,k){s.classList.toggle('on',k===i)});lbs.forEach(function(s,k){s.classList.toggle('on',k===i)});agp.textContent=PH[i]}
+setA(0);setInterval(function(){if(!visible(agp))return;ai=(ai+1)%4;setA(ai)},1800);
+
+/* tuyển và đào tạo AI Agent */
+var tl=document.getElementById('tl'),stg=[].slice.call(tl.querySelectorAll('.stg')),obst=document.getElementById('obst'),obpg=document.getElementById('obpg'),
+ OBT=['Đang lập hồ sơ vị trí','Đang đào tạo nghiệp vụ','Đang kiểm tra trước vận hành','Đang vận hành chính thức'],ob=0,obSub=0;
+function resetOb(){stg.forEach(function(s){s.classList.remove('done','on');s.querySelectorAll('li').forEach(function(l){l.classList.remove('ok')})})}
+resetOb();
+setInterval(function(){if(!visible(tl))return;
+  if(ob>=stg.length){ob=0;obSub=0;resetOb();return}
+  var s=stg[ob],items=s.querySelectorAll('li');s.classList.add('on');
+  if(obSub<items.length){items[obSub].classList.add('ok');obSub++}
+  else{s.classList.remove('on');s.classList.add('done');ob++;obSub=0}
+  var tot=0,dn=0;stg.forEach(function(x){var n=x.querySelectorAll('li');tot+=n.length;dn+=x.querySelectorAll('li.ok').length});
+  if(obpg)obpg.style.width=Math.round(dn/tot*100)+'%';
+  if(obst)obst.textContent=ob>=stg.length?'Sẵn sàng nhận việc':OBT[Math.min(ob,3)];
+},700);
+
+/* hộp công việc của AI Agent */
+var tasks=document.getElementById('tasks'),TK=[
+ ['Đối chiếu đề nghị cấp vật tư với định mức','Tự động khi có đề nghị mới','Trình kích hoạt','st-doing','Đang làm'],
+ ['Lập bảng so sánh báo giá vải lót tháng 11','Ba nhà cung cấp đã gửi báo giá','Từ dịch vụ','st-todo','Cần làm'],
+ ['Gửi kết quả đánh giá quý III cho nhà cung cấp','Đã được Trưởng bộ phận vật tư duyệt','Hằng quý','st-done','Hoàn tất'],
+ ['Soạn hợp đồng mua chỉ may, khoá kéo','Theo mẫu hợp đồng đã duyệt','Từ dịch vụ','st-todo','Cần làm']],ti=0;
+setInterval(function(){if(!visible(tasks))return;var d=TK[ti++%TK.length];var el=document.createElement('div');el.className='task new';
+  el.innerHTML='<span class="cb"></span><div><b>'+d[0]+'</b><small>'+d[1]+'</small></div><span class="src">'+d[2]+'</span><span class="stt2 '+d[3]+'">'+d[4]+'</span>';
+  tasks.insertBefore(el,tasks.firstChild);while(tasks.children.length>4)tasks.removeChild(tasks.lastChild)},3400);
+
+})();
+</script>
+</body>
+</html>
